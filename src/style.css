@@ -1,7 +1,67 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+
 body {
   font-family: 'Abel', sans-serif;
+  margin: 0px;
+  background-color: #EBEBEB;
+}
+header{
+ 
+  left:0px;
+  background-color : #07354D;
 }
 
+.center{
+  text-align: center;
+}
+
+.padding-top-buttom-3{
+  padding-top:3px;
+  padding-bottom:3px;  
+}
+.img-responsive{
+  max-width: 100%;
+  height: auto;
+}
+
+.color-light-blue{
+  background-color: #EDF4FB;
+}
+
+.color-white{
+  background-color: #fff;
+}
+#about-us{
+  display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  
+}
+.title{
+  font-family: 'Source Sans Pro', sans-serif;
+font-style: normal;
+font-weight: bold;
+line-height: normal;
+font-size: 32px;
+color: #1ABC9C;
+
+}
+.content{
+  font-family: 'Source Sans Pro', sans-serif;
+font-style: normal;
+font-weight: bold;
+line-height: normal;
+font-size: 2em;
+text-align: center;
+color: #000000;
+}
+.container-left{
+  width: 50%;
+}
+.container-right{
+  width: 50%;
+}
+/*****************/
 h1 {
   font-size: 2.5em;
   color: #1F618D;
