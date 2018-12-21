@@ -154,6 +154,13 @@ button:active {
 .panel-dashboard{
   padding: 15px 10px 9px 10px;
 }
+.panel-select-title{
+  
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+
+}
 .title-panel-dashboard{
   padding-bottom: 10px;
 }
