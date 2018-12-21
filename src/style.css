@@ -102,10 +102,12 @@ footer{
    
   }
 .panel-select-indicators{
-  padding: 25px;
+  
   margin: 30px;
   
 }
+
+
 
 .panel-select-content{
   padding-top: 25px;
@@ -211,6 +213,10 @@ h1 {
 
 .indicador {
   font-weight: bold;
+}
+
+.padding-25{
+  padding: 25px;
 }
 
 .barra {
