@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
-
+.margin-top-bottom-0{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
 body {
   font-family: 'Abel', sans-serif;
   margin: 0px;
   background-color: #EBEBEB;
 }
 header{
- 
+  height: 130px;
   left:0px;
   background-color : #07354D;
 }
@@ -15,9 +18,21 @@ header{
   text-align: center;
 }
 
-.padding-top-buttom-3{
-  padding-top:3px;
-  padding-bottom:3px;  
+footer{
+  height: 48px;
+}
+.padding-top-40{
+  padding-top:40px;
+    
+}
+.padding-left-bottom-80{
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.padding-content{
+  padding-left: 28px;
+  padding-right: 28px;
+  padding-bottom: 38px;
 }
 .img-responsive{
   max-width: 100%;
@@ -31,6 +46,22 @@ header{
 .color-white{
   background-color: #fff;
 }
+
+.color-blue{
+  color: #083b50;
+}
+
+.text-color-white{
+  color: #fff;
+}
+
+.color-green{
+  color: #01b99d;
+}
+
+.color-gris{
+  background-color: #0b3545;
+}
 #about-us{
   display: flex;
     flex-wrap: wrap;
@@ -42,25 +73,49 @@ header{
 font-style: normal;
 font-weight: bold;
 line-height: normal;
-font-size: 32px;
-color: #1ABC9C;
+font-size: 50px;
 
 }
+
 .content{
-  font-family: 'Source Sans Pro', sans-serif;
-font-style: normal;
-font-weight: bold;
-line-height: normal;
-font-size: 2em;
-text-align: center;
-color: #000000;
+  font-family: 'Tahoma';
+  font-size: 14px;
+  line-height: 20px;
+
+}
+
+.text-color-morado{
+  color: #083b50;
 }
 .container-left{
-  width: 50%;
+  width: 100%;
 }
 .container-right{
-  width: 50%;
+  width: 100%;
 }
+
+button{
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4eb5f1;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999
+}
+button:hover {background-color: #4095c6}
+
+button:active {
+  background-color: #4095c6;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+  
 /*****************/
 h1 {
   font-size: 2.5em;
@@ -111,4 +166,47 @@ a:hover {
 
 label {
   margin-left: 2em;
+}
+
+@media screen  and (min-width:480px) and (max-width:780px) {
+  .container-left{
+    width: 50%;
+  }
+  .container-right{
+    width: 50%;
+  }
+}
+
+@media screen and (min-width:780px) and (max-width:1024px){
+  .container-left{
+    width: 50%;
+  }
+  .container-right{
+    width: 50%;
+  }
+}
+
+@media screen and (min-width:1024px) and (max-width:1316px) { 
+  .container-left{
+    width: 50%;
+  }
+  .container-right{
+    width: 50%;
+  }
+}
+@media screen and (min-width:1316px) and (max-width:1440px)  {
+  .container-left{
+    width: 50%;
+  }
+  .container-right{
+    width: 50%;
+  }
+}
+@media screen and (min-width:1440px)  { 
+  .container-left{
+    width: 50%;
+  }
+  .container-right{
+    width: 50%;
+  }
 }
