@@ -107,6 +107,9 @@ footer{
   
 }
 
+.panel-select-content{
+  padding-top: 25px;
+}
 .title{
   font-family: 'Source Sans Pro', sans-serif;
 font-style: normal;
@@ -163,8 +166,18 @@ button:active {
 .panel-dashboard{
   padding: 15px 10px 9px 10px;
 }
+.panel-select-title{
+  
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+
+}
 .title-panel-dashboard{
   padding-bottom: 10px;
+}
+.color-celeste {
+  background-color: #03A9F4;
 }
  .font-Prompt {
     font-family: 'Prompt', sans-serif;
