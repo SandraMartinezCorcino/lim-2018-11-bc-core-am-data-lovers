@@ -64,7 +64,7 @@ const showStar = () =>{
 };
 const showIndicator = () => {
   if (indicatorSelect.selectedIndex === 0) {
-    document.getElementById("one").style.display = "none";
+    document.getElementById("one").style.display = "block";
     document.getElementById("two").style.display = "block";
     document.getElementById("three").style.display = "none";
     document.getElementById("four").style.display = "none";
@@ -72,7 +72,7 @@ const showIndicator = () => {
     document.getElementById("six").style.display = "none";
   }
   else if (indicatorSelect.selectedIndex === 1) {
-    document.getElementById("one").style.display = "none";
+    document.getElementById("one").style.display = "block";
     document.getElementById("two").style.display = "none";
     document.getElementById("three").style.display = "block";
     document.getElementById("four").style.display = "none";
@@ -80,7 +80,7 @@ const showIndicator = () => {
     document.getElementById("six").style.display = "none";
   }
   else if (indicatorSelect.selectedIndex === 2) {
-    document.getElementById("one").style.display = "none";
+    document.getElementById("one").style.display = "block";
     document.getElementById("two").style.display = "none";
     document.getElementById("three").style.display = "none";
     document.getElementById("four").style.display = "block";
@@ -88,7 +88,7 @@ const showIndicator = () => {
     document.getElementById("six").style.display = "none";
   }
   else if(indicatorSelect.selectedIndex === 3){
-    document.getElementById("one").style.display = "none";
+    document.getElementById("one").style.display = "block";
     document.getElementById("two").style.display = "none";
     document.getElementById("three").style.display = "none";
     document.getElementById("four").style.display = "none";
@@ -96,7 +96,7 @@ const showIndicator = () => {
     document.getElementById("six").style.display = "none";
   }
   else {
-    document.getElementById("one").style.display = "none";
+    document.getElementById("one").style.display = "block";
     document.getElementById("two").style.display = "none";
     document.getElementById("three").style.display = "none";
     document.getElementById("four").style.display = "none";
