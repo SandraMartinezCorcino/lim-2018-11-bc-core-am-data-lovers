@@ -61,6 +61,10 @@ footer{
   color: #083b50;
 }
 
+.color-celeste{
+  background-color:#03A9F4;
+}
+
 .text-color-dark-blue{
   color:#5dbee9;
 }
@@ -87,11 +91,16 @@ footer{
 }
 
 .panel-select{
-  padding: 25px;
+/*  padding: 25px;*/
   margin: 30px;
   height: 124px;
 }
 
+.panel-select-content{
+   padding-top: 25px;
+   
+   
+  }
 .panel-select-indicators{
   padding: 25px;
   margin: 30px;
