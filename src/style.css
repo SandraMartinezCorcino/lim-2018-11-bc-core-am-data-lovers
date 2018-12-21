@@ -1,8 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+@import url('https://fonts.googleapis.com/css?family=Prompt');
+
 .margin-top-bottom-0{
   margin-top: 0px;
   margin-bottom: 0px;
 }
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Abel', sans-serif;
   margin: 0px;
@@ -51,8 +61,15 @@ footer{
   color: #083b50;
 }
 
+.text-color-dark-blue{
+  color:#5dbee9;
+}
 .text-color-white{
   color: #fff;
+}
+
+.text-color-gris-7{
+  color:#777777;
 }
 
 .color-green{
@@ -67,6 +84,12 @@ footer{
     flex-wrap: wrap;
     justify-content: center;
   
+}
+
+.panel-select{
+  padding: 25px;
+  margin: 30px;
+  height: 124px;
 }
 .title{
   font-family: 'Source Sans Pro', sans-serif;
@@ -115,7 +138,31 @@ button:active {
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
-  
+
+#dashboard{
+  height: 85px;
+ 
+}
+
+.panel-dashboard{
+  padding: 15px 10px 9px 10px;
+}
+.title-panel-dashboard{
+  padding-bottom: 10px;
+}
+ .font-Prompt {
+    font-family: 'Prompt', sans-serif;
+  }
+  .fomt-size-18{
+    font-size: 18px;
+  }
+  .fomt-size-14{
+    font-size: 14px;
+  }
+
+  .content-panel-dashboard{
+    text-align: right;
+  }
 /*****************/
 h1 {
   font-size: 2.5em;
@@ -167,6 +214,7 @@ a:hover {
 label {
   margin-left: 2em;
 }
+
 
 @media screen  and (min-width:480px) and (max-width:780px) {
   .container-left{
