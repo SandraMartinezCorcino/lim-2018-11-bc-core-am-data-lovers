@@ -3,9 +3,10 @@ const worldBankIndicators = WORLDBANK.PER.indicators;
 //obtener lista de indicadores que se van a pintar en <ul>
 let getPopulationList = "";
 worldbank.population(worldBankIndicators,"SP.POP").forEach(populationElement => {
-  const populationList = `<div><a href=#> ${populationElement.indicatorName} </a></div>`;
+  const populationList = `<div id="btn-indicator"><a id="indicator-name"> ${populationElement.indicatorName} </a></div>`;
   getPopulationList += populationList;
 });
+
 const ulContainerPoblacion = document.getElementById("container-list-population");
 ulContainerPoblacion.innerHTML = getPopulationList;//pintamos lista de indicadores poblacion
 
@@ -104,5 +105,16 @@ const showIndicator = () => {
     document.getElementById("six").style.display = "block";
   }
 };
+
 indicatorSelect.addEventListener("click", showIndicator);
 btnStart.addEventListener("click", showStar);
+const btnIndicator=document.getElementsByClassName("btn-indicator");
+
+btnIndicator.addEventListener('click',() => {
+const indicatorName=document.getElementsByClassName("indicator-name");
+const name=indicatorName.innerHTML.trim();
+data('PER',name);
+//console.log(data('PER','Población, mujeres (% del total)'));
+console.log(data('PER',name));
+} );
+

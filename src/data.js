@@ -32,6 +32,23 @@ unemployment = (arr, string) => {
   return unemploymentArr;
 };
 
+unemployment = (arr, string) => {
+  let unemploymentArr = [];
+  unemploymentArr = arr.filter(unemploymentElement => unemploymentElement.indicatorCode.substring(0, 6) === string)
+  return unemploymentArr;
+}; 
+
+
+data=(country,string)=>{
+  let arr = [];
+  const worldBankIndicatorsForCountry = WORLDBANK[country]['indicators'];
+  arr = worldBankIndicatorsForCountry.filter(element => element.indicatorName === string );
+  const entriesObject= arr.map((element) => {
+    return Object.entries(element.data);
+  });
+  return entriesObject;
+  };
+
 window.worldbank = {
   population,
   education,
