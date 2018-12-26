@@ -108,10 +108,10 @@ const showIndicator = () => {
 
 indicatorSelect.addEventListener("click", showIndicator);
 btnStart.addEventListener("click", showStar);
-const btnIndicator=document.getElementsByClassName("btn-indicator");
+const btnIndicator=document.getElementById("btn-indicator");
 
 btnIndicator.addEventListener('click',() => {
-const indicatorName=document.getElementsByClassName("indicator-name");
+const indicatorName=document.getElementById("indicator-name");
 const name=indicatorName.innerHTML.trim();
 data('PER',name);
 //console.log(data('PER','Población, mujeres (% del total)'));
