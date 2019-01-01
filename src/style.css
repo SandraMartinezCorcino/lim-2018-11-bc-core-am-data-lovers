@@ -105,6 +105,9 @@ footer{
   background-position: center;
 }
 
+li{
+  list-style:none
+}
 .propety-button-flag{
 width: 170px;
 height: 116px;
