@@ -109,11 +109,10 @@ const showIndicator = () => {
 };
 
 indicatorSelect.addEventListener("click", showIndicator);
-btnStart.addEventListener("click", showStar);
 const btnIndicator=document.getElementById("btn-indicator");
 
 let searchData=[];
-let hijos = document.querySelectorAll("ul.padre > li > a.indicator-name");
+let hijos = document.querySelectorAll("ol.padre > li > a.indicator-name");
 console.log(hijos);
 for (unHijo of hijos) {
       unHijo.addEventListener("click",  (event) =>{
