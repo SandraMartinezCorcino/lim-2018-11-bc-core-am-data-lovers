@@ -20,7 +20,7 @@ ulContainerEducation.innerHTML = getEducationList;//pintamos lista de indicadore
 
 let getSecondaryEducationList = "";
 worldbank.secondaryEducation(worldBankIndicators,"SE.SEC").forEach(secondaryEducationElement => {
-  const secondaryEducationList = `<div><a href=#> ${secondaryEducationElement.indicatorName} </a></div>`;
+  const secondaryEducationList = `<li><a class="indicator-name">${secondaryEducationElement.indicatorName} </a></li>`;
   getSecondaryEducationList += secondaryEducationList;
 });
 const ulContainerSecondaryEducation = document.getElementById("container-list-secondary-education");
@@ -28,7 +28,7 @@ ulContainerSecondaryEducation.innerHTML = getSecondaryEducationList;//pintamos l
 
 let getEmploymentList = "";
 worldbank.employment(worldBankIndicators,"SL.EMP").forEach(employmentElement => {
-  const employmentList = `<div><a href=#> ${employmentElement.indicatorName} </a></div>`;
+  const employmentList = `<li><a class="indicator-name"> ${employmentElement.indicatorName} </a></li>`;
   getEmploymentList += employmentList;
 });
 const ulContainerEmployment = document.getElementById("container-list-employment");
@@ -36,7 +36,7 @@ ulContainerEmployment.innerHTML = getEmploymentList;//pintamos lista de indicado
 
 let getUnemploymentList = "";
 worldbank.unemployment(worldBankIndicators,"SL.UEM").forEach(unemploymentElement => {
-  const unemploymentList = `<div><a href=#> ${unemploymentElement.indicatorName} </a></div>`;
+  const unemploymentList = `<li><a class="indicator-name">${unemploymentElement.indicatorName} </a></li>`;
   getUnemploymentList += unemploymentList;
 });
 const ulContainerUnemployment = document.getElementById("container-list-unemployment");
