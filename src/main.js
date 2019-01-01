@@ -45,8 +45,8 @@ ulContainerUnemployment.innerHTML = getUnemploymentList;//pintamos lista de indi
 
 //mostrando por tipo de indicador que pide el usuario
 document.getElementById("dasboard").style.display = "block";
-document.getElementById("one").style.display = "none";
-document.getElementById("two").style.display = "none";
+document.getElementById("one").style.display = "block";
+document.getElementById("two").style.display = "block";
 document.getElementById("three").style.display = "none";
 document.getElementById("four").style.display = "none";
 document.getElementById("five").style.display = "none";
