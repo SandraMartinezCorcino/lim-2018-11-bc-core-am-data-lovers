@@ -3,7 +3,7 @@ const worldBankIndicators = WORLDBANK.PER.indicators;
 //obtener lista de indicadores que se van a pintar en <ul>
 let getPopulationList = "";
 worldbank.population(worldBankIndicators,"SP.POP").forEach(populationElement => {
-  const populationList = `<div id="btn-indicator"><a id="indicator-name"> ${populationElement.indicatorName} </a></div>`;
+  const populationList = `<li ><a class="indicator-name"> ${populationElement.indicatorName} </a></li>`;
   getPopulationList += populationList;
 });
 
@@ -12,7 +12,7 @@ ulContainerPoblacion.innerHTML = getPopulationList;//pintamos lista de indicador
 
 let getEducationList = "";
 worldbank.education(worldBankIndicators,"SE.TER").forEach(educationElement => {
-  const educationList = `<div><a href=#> ${educationElement.indicatorName} </a></div>`;
+  const educationList = `<li><a class="indicator-name"> ${educationElement.indicatorName} </a></li>`;
   getEducationList += educationList;
 });
 const ulContainerEducation = document.getElementById("container-list-education");
@@ -51,6 +51,8 @@ document.getElementById("three").style.display = "none";
 document.getElementById("four").style.display = "none";
 document.getElementById("five").style.display = "none";
 document.getElementById("six").style.display = "none";
+document.getElementById("countries").style.display = "none";
+document.getElementById("section-data").style.display="none";
 
 
 const indicatorSelect = document.getElementById("select-indicator");
@@ -110,11 +112,51 @@ indicatorSelect.addEventListener("click", showIndicator);
 btnStart.addEventListener("click", showStar);
 const btnIndicator=document.getElementById("btn-indicator");
 
-btnIndicator.addEventListener('click',() => {
+let searchData=[];
+let hijos = document.querySelectorAll("ul.padre > li > a.indicator-name");
+console.log(hijos);
+for (unHijo of hijos) {
+      unHijo.addEventListener("click",  (event) =>{
+        const hijo = event.target;
+        const nameTypeIndicator =document.getElementById("name-type-indicator");  
+        const name = hijo.innerText.trim();
+        nameTypeIndicator.innerHTML=name;
+        searchData[0]=name;
+        document.getElementById("countries").style.display = "block";
+        document.getElementById("one").style.display = "none";
+        document.getElementById("two").style.display = "none";
+        document.getElementById("three").style.display = "none";
+        document.getElementById("four").style.display = "none";
+        document.getElementById("five").style.display = "none";
+        document.getElementById("six").style.display = "none";
+         
+       
+    });
+}
+const groupFlags = document.getElementById('group-flags');
+groupFlags.addEventListener('click',(event)=>{
+    const country=event.target.value;
+    searchData[1]=country;
+    console.log(country);
+    document.getElementById("section-data").style.display = "block";
+    const staticData=document.getElementById("static-data");
+    console.log(data(searchData[1],searchData[0]));
+    //staticData.innerHTML=data(searchData[1],searchData[0])+ "<br>"; 
+    data(searchData[1],searchData[0]).forEach((element)=>{
+      element.forEach((element1)=>{
+        console.log(element1);
+        staticData.innerHTML=element1+"<br>";
+            } )
+    });
+  } );
+
+/*btnIndicator.addEventListener('click',() => {
 const indicatorName=document.getElementById("indicator-name");
 const name=indicatorName.innerHTML.trim();
 data('PER',name);
 //console.log(data('PER','Población, mujeres (% del total)'));
 console.log(data('PER',name));
-} );
+} );*/
+
+
 

@@ -85,13 +85,40 @@ footer{
     justify-content: center;
   
 }
+#flag-bra{
+  background-image: url(img/flags/br.png);
+}
+#flag-chl{
+  background-image: url(img/flags/cl.png);
+}
+#flag-mex{
+  background-image: url(img/flags/mx.png);
+}
+#flag-per{
+  background-image: url(img/flags/pe.png);
+}
 
+.style-img-flag{
+  width:120px;
+  height: 80px; 
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.propety-button-flag{
+width: 170px;
+height: 116px;
+}
 .panel-select{
   
   margin: 30px;
-  height: 124px;
+  /*height: 124px;*/
+  height: auto;
 }
+.margin-bottom-30{
+  margin-bottom:30px;
 
+}
 .panel-select-indicators{
   
   margin: 30px;
@@ -213,7 +240,9 @@ h1 {
 .padding-25{
   padding: 25px;
 }
-
+.cursor-pointer{
+cursor: pointer;
+}
 .barra {
   list-style: none;
   padding: 0px;
