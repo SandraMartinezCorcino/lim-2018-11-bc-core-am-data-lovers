@@ -6,53 +6,47 @@ const example = () => {
 };
 window.example = example;
 
-population = (arr, string) => {
+const population = (arr) => {
   let populationArr = [];
-  populationArr = arr.filter(populationElement => populationElement.indicatorCode.substring(0, 6) === string)
+  populationArr = arr.filter(populationElement => populationElement.indicatorCode.substring(0, 6) === 'SP.POP');
   return populationArr;
 };
-education = (arr, string) => {
+const education = (arr) => {
   let educationArr = [];
-  educationArr = arr.filter(educationElement => educationElement.indicatorCode.substring(0, 6) === string)
+  educationArr = arr.filter(educationElement => educationElement.indicatorCode.substring(0, 6) === 'SE.TER');
   return educationArr;
 };
-secondaryEducation = (arr, string) => {
+const secondaryEducation = (arr) => {
   let secondaryEducationArr = [];
-  secondaryEducationArr = arr.filter(secondaryEducationElement => secondaryEducationElement.indicatorCode.substring(0, 6) === string)
+  secondaryEducationArr = arr.filter(secondaryEducationElement => secondaryEducationElement.indicatorCode.substring(0, 6) === 'SE.SEC');
   return secondaryEducationArr;
 };
-employment = (arr, string) => {
-   let employmentArr = [];
-   employmentArr = arr.filter(employmentElement => employmentElement.indicatorCode.substring(0, 6) === string)
-   return employmentArr;
+const employment = (arr) => {
+  let employmentArr = [];
+  employmentArr = arr.filter(employmentElement => employmentElement.indicatorCode.substring(0, 6) === 'SL.EMP');
+  return employmentArr;
 };
-unemployment = (arr, string) => {
+const unemployment = (arr) => {
   let unemploymentArr = [];
-  unemploymentArr = arr.filter(unemploymentElement => unemploymentElement.indicatorCode.substring(0, 6) === string)
+  unemploymentArr = arr.filter(unemploymentElement => unemploymentElement.indicatorCode.substring(0, 6) === 'SL.UEM');
   return unemploymentArr;
 };
 
-unemployment = (arr, string) => {
-  let unemploymentArr = [];
-  unemploymentArr = arr.filter(unemploymentElement => unemploymentElement.indicatorCode.substring(0, 6) === string)
-  return unemploymentArr;
-}; 
-
-
-data=(country,string)=>{
+const data = (country, string) => {
   let arr = [];
   const worldBankIndicatorsForCountry = WORLDBANK[country]['indicators'];
-  arr = worldBankIndicatorsForCountry.filter(element => element.indicatorName === string );
-  entriesObject= arr.map((element) => {
+  arr = worldBankIndicatorsForCountry.filter(element => element.indicatorName === string);
+  const entriesObject = arr.map((element) => {
     return Object.entries(element.data);
   });
   return entriesObject;
-  };
+};
 
 window.worldbank = {
   population,
   education,
   secondaryEducation,
   employment,
-  unemployment
+  unemployment,
+  data
 };
