@@ -113,7 +113,7 @@ for (let unHijo of hijos) {
     document.getElementById('three').style.display = 'none';
     document.getElementById('four').style.display = 'none';
     document.getElementById('five').style.display = 'none';
-    document.getElementById('six').style.display = 'none';    
+    document.getElementById('six').style.display = 'none';  
   });
 }
 const groupFlags = document.getElementById('group-flags');
@@ -122,9 +122,11 @@ groupFlags.addEventListener('click', (event) => {
   searchData[1] = country;
   document.getElementById('section-data').style.display = 'block';
   const staticData = document.getElementById('static-data');
-   
+  const descData = document.getElementById('desc-data'); 
+  staticData.style.display='block';  
+  descData.style.display='none';
+
   let getPopulationList = '';
-  
   
   worldbank.getAndShowData(WORLDBANK,searchData[1], searchData[0]).forEach((element) => {
     element.forEach((element1) => {
@@ -134,8 +136,20 @@ groupFlags.addEventListener('click', (event) => {
     });      
   });
   staticData.innerHTML = getPopulationList;
+
   const btnSortDataDown=document.getElementById('btn-sort-data-down');
   btnSortDataDown.addEventListener('click',() => {
+    let getDescDataList = '';
+    worldbank.sortData(getAndShowData(WORLDBANK,searchData[1], searchData[0])).forEach((element) => {
+    element.forEach((element1) => {
+        const descDataList = `<li ><a class='indicator-name'> ${element1} </a></li>` ;
+        getDescDataList += descDataList;
+      
+      });      
+    });
+    staticData.style.display='none';
+    descData.style.display='block';
+    descData.innerHTML = getDescDataList;
 
   });
   
