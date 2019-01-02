@@ -43,7 +43,7 @@ data=(country,string)=>{
   let arr = [];
   const worldBankIndicatorsForCountry = WORLDBANK[country]['indicators'];
   arr = worldBankIndicatorsForCountry.filter(element => element.indicatorName === string );
-  const entriesObject= arr.map((element) => {
+  entriesObject= arr.map((element) => {
     return Object.entries(element.data);
   });
   return entriesObject;

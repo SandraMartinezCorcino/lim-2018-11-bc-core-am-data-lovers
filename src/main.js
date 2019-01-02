@@ -3,6 +3,7 @@ const worldBankIndicators = WORLDBANK.PER.indicators;
 //obtener lista de indicadores que se van a pintar en <ul>
 let getPopulationList = "";
 worldbank.population(worldBankIndicators,"SP.POP").forEach(populationElement => {
+  console.log(populationElement);
   const populationList = `<li ><a class="indicator-name"> ${populationElement.indicatorName} </a></li>`;
   getPopulationList += populationList;
 });
@@ -139,17 +140,40 @@ groupFlags.addEventListener('click',(event)=>{
     console.log(country);
     document.getElementById("section-data").style.display = "block";
     const staticData=document.getElementById("static-data");
-    console.log(data(searchData[1],searchData[0]));
-    //staticData.innerHTML=data(searchData[1],searchData[0])+ "<br>"; 
+   
+    
+    //let activities = [];
+    activities= data(searchData[1],searchData[0]);
+    let getPopulationList = "";
+    
     data(searchData[1],searchData[0]).forEach((element)=>{
-      element.forEach((element1)=>{
-        console.log(element1);
-        staticData.innerHTML=element1+"<br>";
-            } )
-    });
+
+  element.forEach((element1)=>{
+    const populationList = `<li ><a class="indicator-name"> ${element1} </a></li>` ;
+    getPopulationList += populationList;
+        } )
+        
+});
+
+staticData.innerHTML = getPopulationList;
+
+
+   
   } );
 
-/*btnIndicator.addEventListener('click',() => {
+  
+/*
+ 
+    //staticData.innerHTML=data(searchData[1],searchData[0])+ "<br>"; 
+   /* data(searchData[1],searchData[0]).forEach((element)=>{
+
+      element.forEach((element1)=>{
+        console.log(element1+'s');
+       // staticData.innerHTML=element1+'s';
+            } )
+            staticData.innerHTML=element1+'s'; 
+    });
+btnIndicator.addEventListener('click',() => {
 const indicatorName=document.getElementById("indicator-name");
 const name=indicatorName.innerHTML.trim();
 data('PER',name);
