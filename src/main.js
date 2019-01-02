@@ -126,14 +126,20 @@ groupFlags.addEventListener('click', (event) => {
     
   // let activities = [];
   let getPopulationList = '';
-    
-  worldbank.data(searchData[1], searchData[0]).forEach((element) => {
+  
+  
+  worldbank.dataArray(WORLDBANK,searchData[1], searchData[0]).forEach((element) => {
     element.forEach((element1) => {
       const populationList = `<li ><a class='indicator-name'> ${element1} </a></li>` ;
       getPopulationList += populationList;
+    
     });      
   });
-
   staticData.innerHTML = getPopulationList;
+  const btnSortDataDown=document.getElementById('btn-sort-data-down');
+  btnSortDataDown.addEventListener('click',() => {
+
+  });
+  
 });
 

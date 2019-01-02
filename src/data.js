@@ -32,9 +32,9 @@ const unemployment = (arr) => {
   return unemploymentArr;
 };
 
-const data = (country, string) => {
+const dataArray = (datas,country, string) => {
   let arr = [];
-  const worldBankIndicatorsForCountry = WORLDBANK[country]['indicators'];
+  const worldBankIndicatorsForCountry = datas[country]['indicators'];
   arr = worldBankIndicatorsForCountry.filter(element => element.indicatorName === string);
   const entriesObject = arr.map((element) => {
     return Object.entries(element.data);
@@ -42,11 +42,28 @@ const data = (country, string) => {
   return entriesObject;
 };
 
+const compare = (a,b) =>{
+if ( parseInt(a[0])  < parseInt(b[0]) ) {
+   return 1;  
+}
+if (parseInt(a[0])>parseInt(b[0])) {
+    return -1;  
+}
+    return 0;
+};
+
+const sortData = (parametro) => {
+ parametro.sort(compare);
+ return parametro;
+}
+
+
+
 window.worldbank = {
   population,
   education,
   secondaryEducation,
   employment,
   unemployment,
-  data
+  dataArray
 };
