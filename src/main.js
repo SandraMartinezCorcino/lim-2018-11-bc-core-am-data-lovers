@@ -137,23 +137,3 @@ groupFlags.addEventListener('click', (event) => {
   staticData.innerHTML = getPopulationList;
 });
 
-  
-/*
- 
-    //staticData.innerHTML=data(searchData[1],searchData[0])+ "<br>"; 
-   /* data(searchData[1],searchData[0]).forEach((element)=>{
-
-      element.forEach((element1)=>{
-        console.log(element1+'s');
-       // staticData.innerHTML=element1+'s';
-            } )
-            staticData.innerHTML=element1+'s'; 
-    });
-btnIndicator.addEventListener('click',() => {
-const indicatorName=document.getElementById("indicator-name");
-const name=indicatorName.innerHTML.trim();
-data('PER',name);
-//console.log(data('PER','Población, mujeres (% del total)'));
-console.log(data('PER',name));
-} );
-*/

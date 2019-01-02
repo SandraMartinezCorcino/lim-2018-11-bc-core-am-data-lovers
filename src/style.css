@@ -171,8 +171,7 @@ font-size: 50px;
 .container-right{
   width: 100%;
 }
-
-button{
+.button-img{
   display: inline-block;
   padding: 15px 25px;
   font-size: 24px;
@@ -186,9 +185,8 @@ button{
   border-radius: 15px;
   box-shadow: 0 9px #999
 }
-button:hover {background-color: #4095c6}
-
-button:active {
+.button-img:hover {background-color: #4095c6}
+.button-img:active {
   background-color: #4095c6;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
