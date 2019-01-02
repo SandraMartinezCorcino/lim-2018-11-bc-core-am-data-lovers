@@ -123,8 +123,6 @@ groupFlags.addEventListener('click', (event) => {
   document.getElementById('section-data').style.display = 'block';
   const staticData = document.getElementById('static-data');
    
-    
-  // let activities = [];
   let getPopulationList = '';
   
   
