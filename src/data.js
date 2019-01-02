@@ -32,7 +32,7 @@ const unemployment = (arr) => {
   return unemploymentArr;
 };
 
-const dataArray = (datas,country, string) => {
+const getAndShowData = (datas,country, string) => {
   let arr = [];
   const worldBankIndicatorsForCountry = datas[country]['indicators'];
   arr = worldBankIndicatorsForCountry.filter(element => element.indicatorName === string);
@@ -65,5 +65,5 @@ window.worldbank = {
   secondaryEducation,
   employment,
   unemployment,
-  dataArray
+  getAndShowData,
 };

@@ -128,7 +128,7 @@ groupFlags.addEventListener('click', (event) => {
   let getPopulationList = '';
   
   
-  worldbank.dataArray(WORLDBANK,searchData[1], searchData[0]).forEach((element) => {
+  worldbank.getAndShowData(WORLDBANK,searchData[1], searchData[0]).forEach((element) => {
     element.forEach((element1) => {
       const populationList = `<li ><a class='indicator-name'> ${element1} </a></li>` ;
       getPopulationList += populationList;
