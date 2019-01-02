@@ -1,10 +1,9 @@
 // esta es una función de ejemplo
-// puedes ver como agregamos la función a nuestro objeto global window
+// puedes ver como agregamos la función a nuestro objeto global window et
 
 const example = () => {
   return 'example';
 };
-
 window.example = example;
 
 const population = (arr) => {
