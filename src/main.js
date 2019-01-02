@@ -123,11 +123,9 @@ groupFlags.addEventListener('click', (event) => {
   document.getElementById('section-data').style.display = 'block';
   const staticData = document.getElementById('static-data');
    
-    
-  // let activities = [];
   let getPopulationList = '';
     
-  worldbank.data(searchData[1], searchData[0]).forEach((element) => {
+  worldbank.getAndShowData(WORLDBANK, searchData[1], searchData[0]).forEach((element) => {
     element.forEach((element1) => {
       const populationList = `<li ><a class='indicator-name'> ${element1} </a></li>` ;
       getPopulationList += populationList;
