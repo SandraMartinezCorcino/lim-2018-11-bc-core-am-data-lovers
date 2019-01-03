@@ -127,31 +127,37 @@ groupFlags.addEventListener('click', (event) => {
   descData.style.display='none';
 
   let getPopulationList = '';
-  
-  worldbank.getAndShowData(WORLDBANK,searchData[1], searchData[0]).forEach((element) => {
+
+  worldbank.getAndShowData(WORLDBANK,searchData[1] ,searchData[0]).forEach((element) => {
     element.forEach((element1) => {
       const populationList = `<li ><a class='indicator-name'> ${element1} </a></li>` ;
       getPopulationList += populationList;
     
     });      
   });
-  staticData.innerHTML = getPopulationList;
-
-  const btnSortDataDown=document.getElementById('btn-sort-data-down');
-  btnSortDataDown.addEventListener('click',() => {
-    let getDescDataList = '';
-    worldbank.sortData(getAndShowData(WORLDBANK,searchData[1], searchData[0])).forEach((element) => {
-    element.forEach((element1) => {
-        const descDataList = `<li ><a class='indicator-name'> ${element1} </a></li>` ;
-        getDescDataList += descDataList;
-      
-      });      
-    });
-    staticData.style.display='none';
-    descData.style.display='block';
-    descData.innerHTML = getDescDataList;
-
-  });
   
+  staticData.innerHTML = getPopulationList;
+  const showAverage=document.getElementById('show-average');
+  showAverage.innerHTML=calculateAverage(worldbank.getAndShowData(WORLDBANK,searchData[1] ,searchData[0]));
+});
+
+const btnSortDataDown=document.getElementById('btn-sort-data-down');
+btnSortDataDown.addEventListener('click',() => {
+  let getDescDataList = '';
+  //const data = WORLDBANK[searchData[1]]['indicators'];
+
+  worldbank.sortData(getAndShowData(WORLDBANK,searchData[1] ,searchData[0])).forEach((element) => {
+  element.forEach((element1) => {
+      const descDataList = `<li ><a class='indicator-name'> ${element1} </a></li>` ;
+      getDescDataList += descDataList;
+    
+    });      
+  });
+  const staticData = document.getElementById('static-data');
+  const descData = document.getElementById('desc-data'); 
+  staticData.style.display='none';
+  descData.style.display='block';
+  descData.innerHTML = getDescDataList;
+
 });
 

@@ -34,7 +34,7 @@ const unemployment = (arr) => {
 
 
 const converToInt = (parametro) => {
-  const result = parametro[0].map(function (x) { 
+  const result = parametro[0].map( (x) => {
     const array=[]; 
     array[0]= parseInt(x[0], 10) ;
     array[1]= x[1] ;
@@ -42,6 +42,12 @@ const converToInt = (parametro) => {
     });
   return result;
 } 
+const calculateAverage=(data) => {
+  initial = 0;
+  const arrSum = data.reduce((sum, current) => sum + current[1] , initial ); 
+  const total= arrSum/data.length;
+  return total;
+}
 const getAndShowData = (datas,country, string) => {
   let arr = [];
   const worldBankIndicatorsForCountry = datas[country]['indicators'];
@@ -65,8 +71,6 @@ const sortData = (parametro) => {
  parametro.sort(compare);
  return parametro;
 };
-
-
 
 window.worldbank = {
   population,
