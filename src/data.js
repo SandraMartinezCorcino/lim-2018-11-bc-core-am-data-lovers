@@ -52,24 +52,22 @@ const getAndShowData = (datas,country, string) => {
   let arr = [];
   const worldBankIndicatorsForCountry = datas[country]['indicators'];
   arr = worldBankIndicatorsForCountry.filter(element => element.indicatorName === string);
-  const entriesObject = arr.map((element) => {
-    return Object.entries(element.data)  ;
-  });
+  const entriesObject = Object.entries(arr[0].data);
   return converToInt(entriesObject);
 };
 
-const compare = (a,b) =>{
-if ( parseInt(a[0])  < parseInt(b[0]) ) {
-   return 1;  
-}
-if (parseInt(a[0])>parseInt(b[0])) {
+const compare = (element1, element2) => {
+  if (parseInt(element1[0]) < parseInt(element2[0])) {
+    return 1;  
+  }
+  if (parseInt(element1[0]) > parseInt(element2[0])) {
     return -1;  
-}
-    return 0;
+  }
+  return 0;
 };
 const sortData = (parametro) => {
- parametro.sort(compare);
- return parametro;
+  parametro.sort(compare);
+  return parametro;
 };
 
 window.worldbank = {
@@ -80,4 +78,5 @@ window.worldbank = {
   unemployment,
   getAndShowData,
   sortData,
+  calculateAverage
 };

@@ -123,8 +123,8 @@ groupFlags.addEventListener('click', (event) => {
   document.getElementById('section-data').style.display = 'block';
   const staticData = document.getElementById('static-data');
   const descData = document.getElementById('desc-data'); 
-  staticData.style.display='block';  
-  descData.style.display='none';
+  staticData.style.display = 'block';  
+  descData.style.display = 'none';
 
   let getPopulationList = '';
 
@@ -132,7 +132,6 @@ groupFlags.addEventListener('click', (event) => {
     element.forEach((element1) => {
       const populationList = `<li ><a class='indicator-name'> ${element1} </a></li>` ;
       getPopulationList += populationList;
-    
     });      
   });
   
@@ -160,4 +159,3 @@ btnSortDataDown.addEventListener('click',() => {
   descData.innerHTML = getDescDataList;
 
 });
-

@@ -85,101 +85,278 @@ describe('worldbank', () => {
   });
 });
 
-const inputData = WORLDBANK; ['BRA', 'CHL', 'MEX', 'PER']; ['Población, mujeres', 'Educación terciaria, profesores (% de mujeres)', 'transición a la escuela secundaria, mujeres (%)', 'Empleo vulnerable, mujeres (% del empleo femenino)', 'Personas desempleadas con educación avanzada, mujeres'];
+const inputDataBra = [
+  {
+    'data': {
+      '1960': 36255477,
+      '1961': 37321829,
+      '1962': 38427687,
+      '1963': 39564454,
+      '1964': 40719864
+    },
+    'indicatorName': 'Población, mujeres'
+  },
+  {
+    'data': {
+      '1960': '',
+      '1961': '',
+      '1962': '',
+      '1963': '',
+      '1964': ''
+    },
+    'indicatorName': 'Educación terciaria, profesores (% de mujeres)'
+  }
+];
+/* const inputDataChl = [
+  {
+    'data': {
+      '1960': 3919393,
+      '1961': 4008265,
+      '1962': 4098796,
+      '1963': 4190911,
+      '1964': 4284523
+    },
+    'indicatorName': 'Población, mujeres'
+  },
+  {
+    'data': {
+      '1960': '',
+      '1961': '',
+      '1962': '',
+      '1963': '',
+      '1964': ''
+    },
+    'indicatorName': 'Educación terciaria, profesores (% de mujeres)'
+  }
+];
+const inputDataMex = [
+  {
+    'data': {
+      '1960': '',
+      '1961': '',
+      '1962': '',
+      '1963': '',
+      '1964': ''
+    },
+    'indicatorName': 'transición a la escuela secundaria, mujeres (%)'
+  },
+  {
+    'data': {
+      '1960': '',
+      '1961': '',
+      '1962': '',
+      '1963': '',
+      '1964': ''
+    },
+    'indicatorName': 'Empleo vulnerable, mujeres (% del empleo femenino)'
+  }
+];
+const inputDataPer = [
+  {
+    'data': {
+      '1960': '',
+      '1961': '',
+      '1962': '',
+      '1963': '',
+      '1964': ''
+    },
+    'indicatorName': 'Empleo vulnerable, mujeres (% del empleo femenino)'
+  },
+  {
+    'data': {
+      '1960': '',
+      '1961': '',
+      '1962': '',
+      '1963': '',
+      '1964': ''
+    },
+    'indicatorName': 'Personas desempleadas con educación avanzada, mujeres'
+  }
+];*/
 
-const outputBraPoblacion = [[1960, 36255477], [1961, 37321829], [1962, 38427687], [1963, 39564454], [1964, 40719864]];
-const outputChlPoblacion = [[1960, 3919393], [1961, 4008265], [1962, 4098796], [1963, 4190911], [1964, 4284523]];
-const outputMexPoblacion = [[1960, 19156559], [1961, 19766220], [1962, 20393694], [1963, 21038608], [1964, 21700487]];
-const outputPerPoblacion = [[1960, 5004721], [1961, 5148262], [1962, 5297665], [1963, 5452349], [1964, 5611421]];
+const outputBraPob = [[1960, 36255477], [1961, 37321829], [1962, 38427687], [1963, 39564454], [1964, 40719864]];
+const outputSortBraPob =    
+[ [ 1964, 40719864 ],
+  [ 1963, 39564454 ],
+  [ 1962, 38427687 ],
+  [ 1961, 37321829 ],
+  [ 1960, 36255477 ] ];
 
-const outputBraEducacion = [[1960, ], [1961, ], [1962, ], [1963, ], [1964, ], [1965, ]];
-const outputChlEducacion = [[1960, ], [1961, ], [1962, ], [1963, ], [1964, ], [1965, ]];
-const outputMexEducacion = [[1960, ], [1961, ], [1962, ], [1963, ], [1964, ], [1965, ]];
-const outputPerEducacion = [[1960, ], [1961, ], [1962, ], [1963, ], [1964, ], [1965, ]];
+const WORLDBANK = {
+  'PER': {
+    'indicators': [
+      {
+        'data': {
+          1960: '', 
+          1961: '', 
+          1962: '', 
+          1963: '', 
+          1964: ''
+        }, 
+        indicatorName: 'Empleo vulnerable, mujeres (% del empleo femenino)'
+      },
+      {
+        'data': {
+          1960: '', 
+          1961: '', 
+          1962: '', 
+          1963: '', 
+          1964: ''
+        }, 
+        indicatorName: 'Personas desempleadas con educación avanzada, mujeres'
+      }
+    ]
+  },
+  'MEX': {
+    'indicators': [
+      {
+        'data': {
+          1960: '', 
+          1961: '', 
+          1962: '', 
+          1963: '', 
+          1964: ''
+        }, 
+        indicatorName: 'transición a la escuela secundaria, mujeres (%)'
+      },
+      {
+        'data': {
+          1960: '', 
+          1961: '', 
+          1962: '', 
+          1963: '', 
+          1964: ''
+        }, 
+        indicatorName: 'Empleo vulnerable, mujeres (% del empleo femenino)'
+      }
+    ]
+  },
+  'BRA': {
+    'indicators': [
+      {
+        'data': {
+          1960: 36255477, 
+          1961: 37321829, 
+          1962: 38427687, 
+          1963: 39564454, 
+          1964: 40719864
+        }, 
+        indicatorName: 'Población, mujeres'
+      },
+      {
+        'data': {
+          1960: '', 
+          1961: '', 
+          1962: '', 
+          1963: '', 
+          1964: ''
+        }, 
+        indicatorName: 'Educación terciaria, profesores (% de mujeres)'
+      }
+    ]
+  },
+  'CHL': {
+    'indicators': [
+      {
+        'data': {
+          1960: 3919393, 
+          1961: 4008265, 
+          1962: 4098796, 
+          1963: 4190911, 
+          1964: 4284523
+        }, 
+        indicatorName: 'Población, mujeres'
+      },
+      {
+        'data': {
+          1960: '', 
+          1961: '', 
+          1962: '', 
+          1963: '', 
+          1964: ''
+        }, 
+        indicatorName: 'Educación terciaria, profesores (% de mujeres)'
+      }
+    ]
+  }
+};
 
-const outputBraSecEducacion = [[1960, ], [1961, ], [1962, ], [1963, ], [1964, ], [1965, ]];
-const outputChlSecEducacion = [[1960, ], [1961, ], [1962, ], [1963, ], [1964, ], [1965, ]];
-const outputMexSecEducacion = [[1960, ], [1961, ], [1962, ], [1963, ], [1964, ], [1965, ]];
-const outputPerSecEducacion = [[1960, ], [1961, ], [1962, ], [1963, ], [1964, ], [1965, ]];
+const inputSort = [[1964, 40719864], [1963, 39564454], [1962, 38427687], [1961, 37321829], [1960, 36255477]];
+/*
+const inputCompare1 = [1960, 36255477];
+const inputCompare2 = [1961, 37321829];
 
-const outputBraEmpleo = [[1960, ], [1961, ], [1962, ], [1963, ], [1964, ], [1965, ]];
-const outputChlEmpleo = [[1960, ], [1961, ], [1962, ], [1963, ], [1964, ], [1965, ]];
-const outputMexEmpleo = [[1960, ], [1961, ], [1962, ], [1963, ], [1964, ], [1965, ]];
-const outputPerEmpleo = [[1960, ], [1961, ], [1962, ], [1963, ], [1964, ], [1965, ]];
-
-const outputBraDesempleo = [[1960, ], [1961, ], [1962, ], [1963, ], [1964, ], [1965, ]];
-const outputChlDesempleo = [[1960, ], [1961, ], [1962, ], [1963, ], [1964, ], [1965, ]];
-const outputMexDesempleo = [[1960, ], [1961, ], [1962, ], [1963, ], [1964, ], [1965, ]];
-const outputPerDesempleo = [[1960, ], [1961, ], [1962, ], [1963, ], [1964, ], [1965, ]];
+const outputCompare1 = 1;
+const outputCompare2 = -1;
+const outputCompare3 = 0;
+*/
+describe('worldbank', () => {
+  it('deberia ser un objeto', () => {
+    expect(typeof worldbank).toBe('object');
+  });
+  describe('worldbank.getAndShowData', () => {
+    it('deberia ser una funcion', () => {
+      expect(typeof worldbank.getAndShowData).toBe('function');
+    });
+    it('deberia retornar un objeto cuyo key es el pais y el value un objeto', () => {
+      expect(worldbank.getAndShowData(WORLDBANK, 'BRA', 'Población, mujeres')).toEqual(outputBraPob);
+    });
+    it('deberia retornar un nuevo array, no modificar el original', () => {
+      expect(worldbank.getAndShowData(WORLDBANK, 'BRA', 'Población, mujeres')).not.toEqual(inputDataBra);
+    });
+  });
+});
 
 describe('worldbank', () => {
   it('deberia ser un objeto', () => {
     expect(typeof worldbank).toBe('object');
   });
-  describe('worldbank.data', () => {
+  describe('worldbank.sortData', () => {
     it('deberia ser una funcion', () => {
-      expect(typeof worldbank.data).toBe('function');
+      expect(typeof worldbank.sortData).toBe('function');
     });
-    it('deberia retornar un arrray de arrays', () => {
-      expect(worldbank.data(inputData)).toEqual(outputBraPoblacion);
+    it('deberia retornar un array con la data ordenada descendentemente', () => {
+      expect(worldbank.sortData(inputSort)).toEqual(outputSortBraPob);
     });
-    it('deberia retornar un arrray de arrays', () => {
-      expect(worldbank.data(inputData)).toEqual(outputChlPoblacion);
-    });
-    it('deberia retornar un arrray de arrays', () => {
-      expect(worldbank.data(inputData)).toEqual(outputMexPoblacion);
-    });
-    it('deberia retornar un arrray de arrays', () => {
-      expect(worldbank.data(inputData)).toEqual(outputPerPoblacion);
-    });
-    it('deberia retornar un arrray de arrays', () => {
-      expect(worldbank.data(inputData)).toEqual(outputBraEducacion);
-    });
-    it('deberia retornar un arrray de arrays', () => {
-      expect(worldbank.data(inputData)).toEqual(outputChlEducacion);
-    });
-    it('deberia retornar un arrray de arrays', () => {
-      expect(worldbank.data(inputData)).toEqual(outputMexEducacion);
-    });
-    it('deberia retornar un arrray de arrays', () => {
-      expect(worldbank.data(inputData)).toEqual(outputPerEducacion);
-    });
-    it('deberia retornar un arrray de arrays', () => {
-      expect(worldbank.data(inputData)).toEqual(outputBraSecEducacion);
-    });
-    it('deberia retornar un arrray de arrays', () => {
-      expect(worldbank.data(inputData)).toEqual(outputChlSecEducacion);
-    });
-    it('deberia retornar un arrray de arrays', () => {
-      expect(worldbank.data(inputData)).toEqual(outputMexSecEducacion);
-    });
-    it('deberia retornar un arrray de arrays', () => {
-      expect(worldbank.data(inputData)).toEqual(outputPerSecEducacion);
-    });
-    it('deberia retornar un arrray de arrays', () => {
-      expect(worldbank.data(inputData)).toEqual(outputBraEmpleo);
-    });
-    it('deberia retornar un arrray de arrays', () => {
-      expect(worldbank.data(inputData)).toEqual(outputChlEmpleo);
-    });
-    it('deberia retornar un arrray de arrays', () => {
-      expect(worldbank.data(inputData)).toEqual(outputMexEmpleo);
-    });
-    it('deberia retornar un arrray de arrays', () => {
-      expect(worldbank.data(inputData)).toEqual(outputPerEmpleo);
-    });
-    it('deberia retornar un arrray de arrays', () => {
-      expect(worldbank.data(inputData)).toEqual(outputBraDesempleo);
-    });
-    it('deberia retornar un arrray de arrays', () => {
-      expect(worldbank.data(inputData)).toEqual(outputChlDesempleo);
-    });
-    it('deberia retornar un arrray de arrays', () => {
-      expect(worldbank.data(inputData)).toEqual(outputMexDesempleo);
-    });
-    it('deberia retornar un arrray de arrays', () => {
-      expect(worldbank.data(inputData)).toEqual(outputPerDesempleo);
+    it('deberia retornar un nuevo array, no modificar el original', () => {
+      expect(worldbank.calculateAverage(inputSort)).not.toEqual(inputSort);
     });
   });
 });
 
+describe('worldbank', () => {
+  it('deberia ser un objeto', () => {
+    expect(typeof worldbank).toBe('object');
+  });
+  describe('worldbank.calculateAverage', () => {
+    it('deberia ser una funcion', () => {
+      expect(typeof worldbank.calculateAverage).toBe('function');
+    });
+    it('deberia retornar el promedio de la data', () => {
+      expect(worldbank.calculateAverage(inputSort)).toEqual(38457862.2);
+    });
+    it('deberia retornar un nuevo array, no modificar el original', () => {
+      expect(worldbank.calculateAverage(inputSort)).not.toEqual(inputSort);
+    });
+  });
+});
+
+/*
+describe('worldbank.compare', () => {
+  it('deberia ser una funcion', () => {
+    expect(typeof compare).toBe('function');
+  });
+  it('deberia retornar el promedio de la data', () => {
+    expect(worldbank.compare(inputCompare1, inputCompare2)).toEqual(outputCompare1);
+  });
+  it('deberia retornar el promedio de la data', () => {
+    expect(worldbank.compare(inputCompare2, inputCompare1)).toEqual(outputCompare2);
+  });
+  it('deberia retornar el promedio de la data', () => {
+    expect(worldbank.compare(inputCompare1, inputCompare1)).toEqual(outputCompare3);
+  });
+  it('deberia retornar un nuevo array, no modificar el original', () => {
+    expect(worldbank.compare(inputDataBra)).not.toEqual(inputDataBra);
+  });
+});
+*/
