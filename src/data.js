@@ -32,40 +32,62 @@ const unemployment = (arr) => {
   return unemploymentArr;
 };
 
-
-const converToInt = (parametro) => {
-  const result = parametro[0].map(function (x) { 
-    const array=[]; 
-    array[0]= parseInt(x[0], 10) ;
-    array[1]= x[1] ;
-    return  array; 
-    });
-  return result;
-} 
-const getAndShowData = (datas,country, string) => {
-  let arr = [];
-  const worldBankIndicatorsForCountry = datas[country]['indicators'];
-  arr = worldBankIndicatorsForCountry.filter(element => element.indicatorName === string);
-  const entriesObject = arr.map((element) => {
-    return Object.entries(element.data)  ;
+const converToInt = (data) => {
+  const result = data.map((x) => { 
+    const array = []; 
+    array[0] = parseInt(x[0], 10) ;
+    array[1] = x[1] ;
+    return array; 
   });
+  return result;
+};
+
+const calculateAverage = (data) => {
+  const initial = 0;
+  const arrSum = data.reduce((sum, current) => sum + current[1], initial); 
+  const total = arrSum / data.length;
+  return total;
+};
+
+const finalData = (dataFilter) => {
+  const entriesObject = Object.entries(dataFilter[0].data);
   return converToInt(entriesObject);
 };
 
-const compare = (a,b) =>{
-if ( parseInt(a[0])  < parseInt(b[0]) ) {
-   return 1;  
-}
-if (parseInt(a[0])>parseInt(b[0])) {
-    return -1;  
-}
-    return 0;
-};
-const sortData = (parametro) => {
- parametro.sort(compare);
- return parametro;
+const filterToData = (data, string) => {
+  let arr = [];
+  arr = data.filter(element => element.indicatorName === string);
+  return finalData(arr);
 };
 
+const getAndShowData = (datas, country, string) => {
+  const worldBankIndicatorsForCountry = datas[country]['indicators'];
+
+  console.log( datas[country]['indicators']);
+  return filterToData(worldBankIndicatorsForCountry, string) ;
+};
+/*
+const getAndShowData = (datas, country, string) => {
+  let arr = [];
+  const worldBankIndicatorsForCountry = datas[country]['indicators'];
+  arr = worldBankIndicatorsForCountry.filter(element => element.indicatorName === string);
+  const entriesObject = Object.entries(arr[0].data);
+  return converToInt(entriesObject);
+};*/
+
+const compare = (element1, element2) => {
+  if (parseInt(element1[0]) < parseInt(element2[0])) {
+    return 1;  
+  }
+  if (parseInt(element1[0]) > parseInt(element2[0])) {
+    return -1;  
+  }
+  return 0;
+};
+const sortData = (parametro) => {
+  parametro.sort(compare);
+  return parametro;
+};
 
 
 window.worldbank = {
@@ -76,4 +98,5 @@ window.worldbank = {
   unemployment,
   getAndShowData,
   sortData,
+  calculateAverage
 };

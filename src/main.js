@@ -123,35 +123,35 @@ groupFlags.addEventListener('click', (event) => {
   document.getElementById('section-data').style.display = 'block';
   const staticData = document.getElementById('static-data');
   const descData = document.getElementById('desc-data'); 
-  staticData.style.display='block';  
-  descData.style.display='none';
+  staticData.style.display = 'block';  
+  descData.style.display = 'none';
 
   let getPopulationList = '';
-  
-  worldbank.getAndShowData(WORLDBANK,searchData[1], searchData[0]).forEach((element) => {
+
+  worldbank.getAndShowData(WORLDBANK, searchData[1], searchData[0]).forEach((element) => {
     element.forEach((element1) => {
       const populationList = `<li ><a class='indicator-name'> ${element1} </a></li>` ;
       getPopulationList += populationList;
-    
     });      
   });
-  staticData.innerHTML = getPopulationList;
-
-  const btnSortDataDown=document.getElementById('btn-sort-data-down');
-  btnSortDataDown.addEventListener('click',() => {
-    let getDescDataList = '';
-    worldbank.sortData(getAndShowData(WORLDBANK,searchData[1], searchData[0])).forEach((element) => {
-    element.forEach((element1) => {
-        const descDataList = `<li ><a class='indicator-name'> ${element1} </a></li>` ;
-        getDescDataList += descDataList;
-      
-      });      
-    });
-    staticData.style.display='none';
-    descData.style.display='block';
-    descData.innerHTML = getDescDataList;
-
-  });
   
+  staticData.innerHTML = getPopulationList;
+  const showAverage = document.getElementById('show-average');
+  showAverage.innerHTML = worldbank.calculateAverage(worldbank.getAndShowData(WORLDBANK, searchData[1], searchData[0]));
 });
 
+const btnSortDataDown = document.getElementById('btn-sort-data-down');
+btnSortDataDown.addEventListener('click', () => {
+  let getDescDataList = '';
+  worldbank.sortData(worldbank.getAndShowData(WORLDBANK, searchData[1], searchData[0])).forEach((element) => {
+    element.forEach((element1) => {
+      const descDataList = `<li ><a class='indicator-name'> ${element1} </a></li>` ;
+      getDescDataList += descDataList;
+    });      
+  });
+  const staticData = document.getElementById('static-data');
+  const descData = document.getElementById('desc-data'); 
+  staticData.style.display = 'none';
+  descData.style.display = 'block';
+  descData.innerHTML = getDescDataList;
+});
