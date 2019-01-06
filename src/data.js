@@ -1,11 +1,7 @@
-// esta es una función de ejemplo
-// puedes ver como agregamos la función a nuestro objeto global window et
-
 const example = () => {
   return 'example';
 };
 window.example = example;
-
 const population = (arr) => {
   let populationArr = [];
   populationArr = arr.filter(populationElement => populationElement.indicatorCode.substring(0, 6) === 'SP.POP');
@@ -31,7 +27,6 @@ const unemployment = (arr) => {
   unemploymentArr = arr.filter(unemploymentElement => unemploymentElement.indicatorCode.substring(0, 6) === 'SL.UEM');
   return unemploymentArr;
 };
-
 const converToInt = (data) => {
   const result = data.map((x) => { 
     const array = []; 
@@ -41,40 +36,27 @@ const converToInt = (data) => {
   });
   return result;
 };
-
 const calculateAverage = (data) => {
   const initial = 0;
   const arrSum = data.reduce((sum, current) => sum + current[1], initial); 
   const total = arrSum / data.length;
   return total;
 };
-
 const finalData = (dataFilter) => {
   const entriesObject = Object.entries(dataFilter[0].data);
   return converToInt(entriesObject);
 };
-
 const filterToData = (data, string) => {
   let arr = [];
   arr = data.filter(element => element.indicatorName === string);
   return finalData(arr);
 };
-
 const getAndShowData = (datas, country, string) => {
   const worldBankIndicatorsForCountry = datas[country]['indicators'];
 
   console.log( datas[country]['indicators']);
   return filterToData(worldBankIndicatorsForCountry, string) ;
 };
-/*
-const getAndShowData = (datas, country, string) => {
-  let arr = [];
-  const worldBankIndicatorsForCountry = datas[country]['indicators'];
-  arr = worldBankIndicatorsForCountry.filter(element => element.indicatorName === string);
-  const entriesObject = Object.entries(arr[0].data);
-  return converToInt(entriesObject);
-};*/
-
 const compare = (element1, element2) => {
   if (parseInt(element1[0]) < parseInt(element2[0])) {
     return 1;  
@@ -88,8 +70,6 @@ const sortData = (parametro) => {
   parametro.sort(compare);
   return parametro;
 };
-
-
 window.worldbank = {
   population,
   education,
