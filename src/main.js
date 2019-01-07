@@ -1,8 +1,48 @@
+/* 
 let listNav = document.getElementById('list-menu');
 let navBar = document.getElementById('js-navbar');
 navBar.addEventListener('click', function() {
   listNav.classList.toggle('active');
 });
+
+
+const textoSomos = document.getElementById('texto-somos');
+const textoIndicadores = document.getElementById('texto-indicadores');
+const textoPaises = document.getElementById('texto-paises');
+const iniciar = document.getElementById('inicio');
+const textoSomos2 = document.getElementById('somos')
+const textoIndicadores2 = document.getElementById('indicadores');
+const textoPaises2 = document.getElementById('paises');
+
+// pantalla inicio
+iniciar.addEventListener('click', () => {
+  first.style.display = 'block';
+  somos.style.display = 'none';
+  textoIndicadores.style.display = 'none';
+  textoPaises.style.display = 'none';
+});
+// pantalla quienes somos
+textoSomos2.addEventListener('click', () => {
+  first.style.display = 'none';
+  somos.style.display = 'block';
+  textoIndicadores.style.display = 'none';
+  textoPaises.style.display = 'none';
+});
+// pantalla indicadores
+textoIndicadores2.addEventListener('click', () => {
+  first.style.display = 'none';
+  somos.style.display = 'none';
+  textoIndicadores.style.display = 'block';
+  textoPaises.style.display = 'none';
+});
+// pantalla paises
+textoPaises2.addEventListener('click', () => {
+  first.style.display = 'none';
+  somos.style.display = 'none';
+  textoIndicadores.style.display = 'none';
+  textoPaises.style.display = 'block';
+});
+*/
 const worldBankIndicators = WORLDBANK.PER.indicators;
 let getPopulationList = '';
 worldbank.population(worldBankIndicators).forEach(populationElement => {

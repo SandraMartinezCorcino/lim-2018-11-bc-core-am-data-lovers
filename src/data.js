@@ -1,7 +1,11 @@
+// esta es una función de ejemplo
+// puedes ver como agregamos la función a nuestro objeto global window et
+
 const example = () => {
   return 'example';
 };
 window.example = example;
+
 const population = (arr) => {
   let populationArr = [];
   populationArr = arr.filter(populationElement => populationElement.indicatorCode.substring(0, 6) === 'SP.POP');
@@ -27,30 +31,35 @@ const unemployment = (arr) => {
   unemploymentArr = arr.filter(unemploymentElement => unemploymentElement.indicatorCode.substring(0, 6) === 'SL.UEM');
   return unemploymentArr;
 };
+
 const converToInt = (data) => {
   const result = data.map((x) => { 
     const array = []; 
     array[0] = parseInt(x[0], 10) ;
-    array[1] = parseFloat(x[1]) ;
+    array[1] = x[1] ;
     return array; 
   });
   return result;
 };
+
 const calculateAverage = (data) => {
   const initial = 0;
   const arrSum = data.reduce((sum, current) => sum + current[1], initial); 
   const total = arrSum / data.length;
   return total;
 };
+
 const finalData = (dataFilter) => {
   const entriesObject = Object.entries(dataFilter[0].data);
   return converToInt(entriesObject);
 };
+
 const filterToData = (data, string) => {
   let arr = [];
   arr = data.filter(element => element.indicatorName === string);
   return finalData(arr);
 };
+
 const getAndShowData = (datas, country, string) => {
   const worldBankIndicatorsForCountry = datas[country]['indicators'];
   return filterToData(worldBankIndicatorsForCountry, string) ;
@@ -68,6 +77,8 @@ const sortData = (parametro) => {
   parametro.sort(compare);
   return parametro;
 };
+
+
 window.worldbank = {
   population,
   education,
