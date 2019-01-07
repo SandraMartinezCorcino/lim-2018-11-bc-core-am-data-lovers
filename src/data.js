@@ -31,7 +31,7 @@ const converToInt = (data) => {
   const result = data.map((x) => { 
     const array = []; 
     array[0] = parseInt(x[0], 10) ;
-    array[1] = parseFloat(x[1]) ;
+    array[1] = (x[1]==='' ? 0 : parseFloat(x[1]));  
     return array; 
   });
   return result;
@@ -44,6 +44,7 @@ const calculateAverage = (data) => {
 };
 const finalData = (dataFilter) => {
   const entriesObject = Object.entries(dataFilter[0].data);
+  console.log(converToInt(entriesObject));
   return converToInt(entriesObject);
 };
 const filterToData = (data, string) => {
