@@ -1,3 +1,8 @@
+let listNav = document.getElementById('list-menu');
+let navBar = document.getElementById('js-navbar');
+navBar.addEventListener('click', function() {
+  listNav.classList.toggle('active');
+});
 const worldBankIndicators = WORLDBANK.PER.indicators;
 let getPopulationList = '';
 worldbank.population(worldBankIndicators).forEach(populationElement => {
@@ -112,10 +117,8 @@ groupFlags.addEventListener('click', (event) => {
   descData.style.display = 'none';
   let getPopulationList = '';
   worldbank.getAndShowData(WORLDBANK,searchData[1] ,searchData[0]).forEach((element) => {
-    element.forEach((element1) => {
-      const populationList = `<li ><a class='indicator-name'> ${element1} </a></li>` ;
-      getPopulationList += populationList;
-    });      
+      const populationList = `<li class='list-style-none' ><a class='indicator-name card-title font-Prompt fomt-size-18'> <span>Año:</span> ${element[0]} <span>=</span> ${element[1]} </a></li>` ;
+      getPopulationList += populationList;     
   });  
   staticData.innerHTML = getPopulationList;
   const showAverage=document.getElementById('show-average');
@@ -125,11 +128,8 @@ const btnSortDataDown=document.getElementById('btn-sort-data-down');
 btnSortDataDown.addEventListener('click',() => {
   let getDescDataList = '';
   worldbank.sortData(getAndShowData(WORLDBANK,searchData[1] ,searchData[0])).forEach((element) => {
-  element.forEach((element1) => {
-      const descDataList = `<li ><a class='indicator-name'> ${element1} </a></li>` ;
+      const descDataList = `<li class='list-style-none' ><a class='indicator-name card-title font-Prompt fomt-size-18'> <span>Año:</span> ${element[0]} <span>=</span> ${element[1]} </a></li>` ;
       getDescDataList += descDataList;
-    
-    });      
   });
   const staticData = document.getElementById('static-data');
   const descData = document.getElementById('desc-data'); 

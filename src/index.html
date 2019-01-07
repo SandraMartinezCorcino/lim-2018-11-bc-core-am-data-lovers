@@ -9,15 +9,30 @@
    </head>
    <body>
       <header>
-         <div id="logo" class="center ">
-            <img class="padding-top-40" src="img/logo.PNG" />
-         </div>
+            <nav class="menu navbar">
+              <span class="navbar-img" id="js-navbar">
+                  <img src="https://i.ibb.co/Jtcb7kh/navbar.png" alt = "navbar" width = "30" height = "30">
+               </span>
+               <img src="https://i.ibb.co/KWCqSQK/logo-wordbank.png" class = "logo-banco" alt = "logotype">
+               <ul class="list-nav" id="list-menu">
+                  <li>
+                     <a href="#" id = "inicio">QUIENES SOMOS?</a>
+                  </li>
+                  <li>
+                     <a href="#" id = "indicadores">INDICADORES DE DESARROLLO</a>
+                  </li>
+                  <li>
+                     <a href="#" id = "paises">PAISES</a>
+                  </li>
+               </ul>
+            </nav>
+        
       </header>
       <main>
-         <section id="dasboard" class="color-white">
+         <section id="dasboard"  class="color-white">
             <div class="panel-dashboard">
-               <div class="title-panel-dashboard font-Prompt fomt-size-18">
-                  <p>Dashboard</p>
+               <div class="title-panel-dashboard font-Prompt font-size-21">
+                  <p class="text-dashboard-color">Dashboard</p>
                </div>
                <div class="content-panel-dashboard  font-Prompt fomt-size-14">
                   <p ><span class="text-color-gris-7">Inicio</span>  <span>/</span> <span class="text-color-dark-blue">Indicadores</span></p>
@@ -25,7 +40,7 @@
             </div>
          </section>
          <section id="one" class="panel-select color-white">
-            <div class="panel-select-title color-celeste text-color-white font-Prompt fomt-size-14 font-weight-bold
+            <div class="panel-select-title color-celeste text-color-white font-Prompt card-title 
                "> Tipo de Indicadores </div>
             <div class="panel-select-content center">
                <label for="select-indicator">Filtrar por tipo</label>
@@ -40,69 +55,83 @@
          </section>
          <section id="two">
             <div class="panel-select-indicators color-white">
-               <p class = "indicador panel-select-title color-celeste text-color-white font-Prompt fomt-size-14">Indicadores de Población:</p>
+               <p class="panel-select-title color-celeste text-color-white font-Prompt card-title" 
+               >Indicadores de Población:</p>
                <p class="center font-Prompt fomt-size-18 padding-top-bottom-25">RELACIÓN DE LOS TIPO DE INDICADORES DE POBLACIÓN</p>
-               <ol id = "container-list-population" class="padre padding-center">
+               <ol id = "container-list-population" class="padre card-center-list font-Prompt card-title cursor-pointer">
                </ol>
             </div>
          </section>
          <section id="three">
             <div class="panel-select-indicators color-white">
-               <p class = "indicador panel-select-title color-celeste text-color-white font-Prompt fomt-size-14">Indicadores de Educación Nivel Terciaria:</p>
+               <p class = "panel-select-title color-celeste text-color-white font-Prompt card-title">Indicadores de Educación Nivel Terciaria:</p>
                <p class="center font-Prompt fomt-size-18 padding-top-bottom-25">RELACIÓN DE LOS TIPO DE INDICADORES DE EDUCACION NIVEL TERCIARIA</p>
-               <ol id = "container-list-education" class="padre padding-center">
+               <ol id = "container-list-education" class="padre card-center-list font-Prompt card-title cursor-pointer ">
                </ol>
             </div>
          </section>
          <section id="four">
             <div class = "panel-select-indicators color-white">
-               <p class = "indicador panel-select-title color-celeste text-color-white font-Prompt fomt-size-14">Indicadores de Educación Nivel secundaria:</p>
+               <p class = "panel-select-title color-celeste text-color-white font-Prompt card-title">Indicadores de Educación Nivel secundaria:</p>
                <p class = "center font-Prompt fomt-size-18 padding-top-bottom-25">RELACIÓN DE LOS TIPO DE INDICADORES DE EDUCACIÓN NIVEL SECUNDARIA</p>
-               <ol id = "container-list-secondary-education"  class="padre padding-center">
+               <ol id = "container-list-secondary-education"  class="padre card-center-list font-Prompt card-title cursor-pointer">
                </ol>
             </div>
          </section>
          <section id="five">
             <div class="panel-select-indicators color-white">
-               <p class = "indicador panel-select-title color-celeste text-color-white font-Prompt fomt-size-14">Indicadores de Empleo:</p>
+               <p class = "panel-select-title color-celeste text-color-white font-Prompt card-title">Indicadores de Empleo:</p>
                <p class="center font-Prompt fomt-size-18 padding-top-bottom-25">RELACIÓN DE LOS TIPO DE INDICADORES DE EMPLEO</p>
-               <ol id = "container-list-employment"  class = "padre padding-center">
+               <ol id = "container-list-employment"  class = "padre card-center-list font-Prompt card-title cursor-pointer">
                </ol>
             </div>
          </section>
          <section id="six">
             <div class="panel-select-indicators color-white">
-               <p class = "indicador panel-select-title color-celeste text-color-white font-Prompt fomt-size-14">Indicadores de Desempleo:</p>
+               <p class = "panel-select-title color-celeste text-color-white font-Prompt card-title">Indicadores de Desempleo:</p>
                <p class="center font-Prompt fomt-size-18 padding-top-bottom-25">RELACIÓN DE LOS TIPO DE INDICADORES DE DESEMPLEO</p>
-               <ol id = "container-list-unemployment"  class = "padre padding-center">
+               <ol id = "container-list-unemployment"  class = "padre card-center-list font-Prompt card-title cursor-pointer">
                </ol>
             </div>
          </section>
          <section id="countries" class="panel-select color-white">
-            <div class="panel-select-title color-celeste text-color-white font-Prompt fomt-size-14 font-weight-bold
+            <div class="panel-select-title color-celeste text-color-white font-Prompt card-title
                "> Tipo de Indicador: <span id="name-type-indicator"> </span> 
             </div>
             <div class="panel-select-content center">
-               <p class="margin-bottom-30">Seleccione un país:</p>
+               <p class="margin-bottom-30 card-title font-Prompt fomt-size-18">Seleccione la bandera del país:</p>
                <div id="group-flags" class="panel-flag padding-25">
-                  <button id="flag-bra"  class="button-img style-img-flag propety-button-flag" type="button"  value="BRA"></button>  
-                  <button id="flag-chl" class="button-img style-img-flag propety-button-flag" type="button" value="CHL"></button>
-                  <button id="flag-mex" class="button-img style-img-flag propety-button-flag" type="button" value="MEX"></button>
-                  <button id="flag-per" class="button-img style-img-flag propety-button-flag" type="button"  value="PER"></button>
+                  <button id="flag-bra"  class="button-img style-img-flag propety-button-flag margin-25" type="button"  value="BRA"></button>  
+                  <button id="flag-chl" class="button-img style-img-flag propety-button-flag margin-25" type="button" value="CHL"></button>
+                  <button id="flag-mex" class="button-img style-img-flag propety-button-flag margin-25" type="button" value="MEX"></button>
+                  <button id="flag-per" class="button-img style-img-flag propety-button-flag margin-25" type="button"  value="PER"></button>
                </div>
             </div>
          </section>
-         <section id="section-data">
-            <div class="panel-select-indicators color-white" >
-               <p class = "indicador panel-select-title color-celeste text-color-white font-Prompt fomt-size-14">Indicadores de Desempleo:</p>
-               <p id="panel-average">El promedio es: <span id="show-average"></span> </p>
-               <button id="btn-sort-data-down" >Descendente</button>
+         <section id="section-data" >
+            <div class="panel-flex">
+              <div class="panel-select-indicators color-white panel-right" >
+               <p class = "panel-select-title color-celeste text-color-white font-Prompt card-title">Promedio de la data:</p>
+              <div class="alert-average alert-flex">
+               <img  src="img/graph.png" class="alert-left" />
+               <div class="alert-right">
+               <p id="show-average" class="alerts-heading text-align-right"></p>
+               <p class="alert-info text-align-right">Promedio Total</p></div>
+              </div>
+            </div>
+            <div class="panel-select-indicators color-white panel-left" >
+               <p class = "panel-select-title color-celeste text-color-white font-Prompt card-title">Data según el Año:</p>
+               <div class="center">
+               <button id="btn-sort-data-down" class="button-desc">Cronológicamente Descendente</button>
+               <p class="card-title font-Prompt fomt-size-18">Información ordenada cronológicamente</p>
                <div id = "static-data" class="padding-25">
                </div>
                <div id = "desc-data" class="padding-25">
                </div>
+               </div>
             </div>
-         </section>
+         </div>
+         </section>         
       </main>
       <footer id="we" class="color-gris">
          <p class="color-green margin-top-bottom-0" ><span> © Copyright 2018. Todos los derechos reservados. </span> </p>
@@ -110,5 +139,6 @@
       <script src="./data/worldbank/worldbank.js"></script>
       <script src="data.js"></script>
       <script src="main.js"></script>
+      <script src="Chart.js"></script>
    </body>
 </html>

@@ -31,7 +31,7 @@ const converToInt = (data) => {
   const result = data.map((x) => { 
     const array = []; 
     array[0] = parseInt(x[0], 10) ;
-    array[1] = x[1] ;
+    array[1] = parseFloat(x[1]) ;
     return array; 
   });
   return result;
@@ -53,8 +53,6 @@ const filterToData = (data, string) => {
 };
 const getAndShowData = (datas, country, string) => {
   const worldBankIndicatorsForCountry = datas[country]['indicators'];
-
-  console.log( datas[country]['indicators']);
   return filterToData(worldBankIndicatorsForCountry, string) ;
 };
 const compare = (element1, element2) => {
