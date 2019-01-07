@@ -63,14 +63,15 @@ Yo como estudiante universitario quiero ordenar la data desde el año más recie
 
 En este primer sketch escogimos como usuarios a empresarios que querían exportar sus productos a otros países, pero al analizar mejor la data y encontrar que la gran mayoría de esta correspondía a indicadores  demográficos de la población femenina pensamos en crear nuestro producto para ONGs; finalmente para tener más facilidad en acceder a entrevistas con usuarios reales y debido al corto tiempo para esto, optamos por diseñar una página para universitarios que quisieran acceder a este tipo de data para realizar sus trabajos de la universidad.
 
-[Primer Prototipo](https://user-images.githubusercontent.com/45099610/50743295-070cb600-11e4-11e9-8cce-9e5f4c6728f3.jpg).
+![primer-prototipo](https://user-images.githubusercontent.com/45099610/50743482-6cfa3d00-11e6-11e9-8ade-a4e64017a268.PNG)
 
 Al iterar nuestro anterior prototipo nos dimos cuenta que a través de la barra de navegación debíamos explicar quiénes somos y que es lo que hacemos, los usuarios nos dijeron que desde la primera vista de la página querían que se les indique claramente que podían filtrar por tipo de indicador y país, que no necesitaban un mapa de los países a menos que tuviera funcionalidad y les permitiera al dar click de frente filtrar por país. Por lo que cambiamos el diseño y se añadió la funcionalidad de mostrar la data por años y dos botones que debían mostrar la data de forma descendente y el promedio  respectivamente
 
-(link segunda imagen).
+![segundo-prototipo](https://user-images.githubusercontent.com/45099610/50743549-5ef8ec00-11e7-11e9-8b41-6b3be63c471c.PNG)
 
 Al iterar el nuevamente nuestro prototipo el usuario opinó que podíamos mostrar banderas en vez que un select para filtrar por país y que no hacía falta mostrar en otra vista el promedio, ya que solo era una cifra y prefería visualizarlo junto con la lista que muestra la data.
-(link tercera imagen)
+
+![tercer-prototipo](https://user-images.githubusercontent.com/45099610/50743652-bf3c5d80-11e8-11e9-9d28-72c5e376b4c1.PNG)
 
 ## Prototipo de alta fidelidad
 
