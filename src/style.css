@@ -1,43 +1,129 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 @import url('https://fonts.googleapis.com/css?family=Prompt');
 
-.margin-top-bottom-0{
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
-
-
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+.margin-25{
+  margin: 25px;
+}
+.margin-top-bottom-0{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.menu {
+  font-family: "Josefin Sans", sans-serif;
+}
+.navbar {
+  width: 100%;
+  z-index: 100;
+  position: absolute;
+  font-size: 18px;
+  background: white;
+  border: 1px solid #e4e4e4;
+}
+.list-nav {
+  background: white;
+  list-style-type: none;
+  display: none;
+}
+#inicio, #indicadores, #paises {
+  text-decoration: none;
+  color: #1b80c3;
+  padding: 28px;
+  font-family: Asap;
+  font-size: 21px;
+}
+#inicio:hover, #indicadores:hover, #paises:hover {
+  color: #0e2f53;
+}
+.list-nav li {
+  text-align: center;
+  margin: 15px auto;
+}
+.logo-banco {
+  display: inline-block;
+  width: 18em;
+  height: 4em;
+  margin-left: 30px;
+}
+.navbar-img {
+  margin-top: 2.5%;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 24px;
+}
+.active {
+  display: block;
+}
+@media screen and (min-width: 768px) {
+  .navbar {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 0;
+      height: 70px;
+      align-items: center;
+  }
 
+  .list-nav {
+      display: flex;
+      margin-right: 30px;
+      flex-direction: row;
+      justify-content: flex-end;
+  }
+
+  .list-nav li {
+      margin: 0;
+  }
+
+  #inicio, #indicadores, #paises {
+      margin-left: 40px;
+  }
+
+  .logo-banco {
+      margin-top: 0;
+  }
+
+  .navbar-img {
+      display: none;
+  }
+}
 body {
   font-family: 'Abel', sans-serif;
   margin: 0px;
-  background-color: #EBEBEB;
+  background-color: #eceff2;
+  width: 100%
+}
+.card-title{
+  font-size: 16px;
+  font-weight: 500;
 }
 header{
-  height: 130px;
+  height: 77px;
   left:0px;
   background-color : #07354D;
 }
-
 .center{
   text-align: center;
 }
-
 footer{
   height: 48px;
 }
 .padding-top-40{
   padding-top:40px;
-    
 }
 .padding-left-bottom-80{
   padding-top: 80px;
   padding-bottom: 80px;
+}
+.padding-top-bottom-25{
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
 .padding-content{
   padding-left: 28px;
@@ -48,63 +134,141 @@ footer{
   max-width: 100%;
   height: auto;
 }
-
 .color-light-blue{
   background-color: #EDF4FB;
 }
-
 .color-white{
   background-color: #fff;
 }
-
+.indicator-name{
+  border-bottom: 1px solid rgba(120, 130, 140, 0.13);
+  display: block;
+  text-decoration: none;
+  padding: 15px 10px;
+  color: #455a64
+}
+.indicator-name:hover{
+  background: #f2f4f8;
+}
 .color-blue{
   color: #083b50;
 }
-
-.color-celeste{
-  background-color:#03A9F4;
+.text-dashboard-color{
+ color:#203f60;
 }
-
+.background_color-blue{
+  background-color: #083b50;
+}
 .text-color-dark-blue{
   color:#5dbee9;
 }
 .text-color-white{
   color: #fff;
 }
-
 .text-color-gris-7{
   color:#777777;
 }
-
 .color-green{
   color: #01b99d;
 }
-
 .color-gris{
   background-color: #0b3545;
 }
-#about-us{
+.panel-flex{
   display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
-
+.panel-left{
+  width: 100%;
+  overflow-y: scroll;
+  height: 500px;
+}
+.panel-right{
+  width: 100%;
+}
+.alert-flex{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.alert-left{
+  width: 20%;
+}
+.alert-rigth{
+  width: 80%;
+}
+.alert-average{
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+  color: #3a87ad;
+  width: auto;
+  height: 111px;
+  padding: 15px;
+  margin:40px 10px 40px 10px;
+  padding: 10px;
+  border-radius: 15px;
+}
+canvas { background-color : #eee;
+}
+.list-style-none{
+  list-style:none;
+}
+.text-align-right{
+text-align: right;
+}
+.alerts-heading {
+  font-size: 20px;
+  margin: 0;
+}
+.alert-info{
+color: #3a87ad;
+font-size: 18px;
+}
+#flag-bra{
+  background-image: url(img/flags/br.png);
+}
+#flag-chl{
+  background-image: url(img/flags/cl.png);
+}
+#flag-mex{
+  background-image: url(img/flags/mx.png);
+}
+#flag-per{
+  background-image: url(img/flags/pe.png);
+}
+.style-img-flag{
+  width:120px;
+  height: 80px; 
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.card-center-list{
+ margin-left: 20%;
+ margin-right: 20%;
+ padding-bottom: 25px;
+}
+.propety-button-flag{
+width: 170px;
+height: 116px;
+}
+.panel-flag{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 .panel-select{
-/*  padding: 25px;*/
   margin: 30px;
-  height: 124px;
+  height: auto;
 }
-
-.panel-select-content{
-   padding-top: 25px;
-   
-   
-  }
+.margin-bottom-30{
+  margin-bottom:30px;
+}
 .panel-select-indicators{
-  
-  margin: 30px;
-  
+   margin: 30px;
+}
+.font-weight-bold{
+ font-weight: bold;
 }
 
 
@@ -137,8 +301,7 @@ font-size: 50px;
 .container-right{
   width: 100%;
 }
-
-button{
+.button-img{
   display: inline-block;
   padding: 15px 25px;
   font-size: 24px;
@@ -152,9 +315,8 @@ button{
   border-radius: 15px;
   box-shadow: 0 9px #999
 }
-button:hover {background-color: #4095c6}
-
-button:active {
+.button-img:hover {background-color: #4095c6}
+.button-img:active {
   background-color: #4095c6;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
@@ -164,12 +326,22 @@ button:active {
   height: 85px;
  
 }
-
-.panel-dashboard{
-  padding: 15px 10px 9px 10px;
+.button-desc {
+  background-color: #4CAF50; 
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 20px 2px;
+  cursor: pointer;
+  padding: 10px 24px;
 }
-.panel-select-title{
-  
+.panel-dashboard{
+  padding: 15px 30px 9px 30px;
+}
+.panel-select-title{ 
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 10px;
@@ -177,6 +349,11 @@ button:active {
 }
 .title-panel-dashboard{
   padding-bottom: 10px;
+  font-weight: 400;
+  line-height: 30px;
+}
+.font-size-21{
+    font-size: 21px;
 }
 .color-celeste {
   background-color: #03A9F4;
@@ -194,7 +371,6 @@ button:active {
   .content-panel-dashboard{
     text-align: right;
   }
-/*****************/
 h1 {
   font-size: 2.5em;
   color: #1F618D;
@@ -218,7 +394,9 @@ h1 {
 .padding-25{
   padding: 25px;
 }
-
+.cursor-pointer{
+cursor: pointer;
+}
 .barra {
   list-style: none;
   padding: 0px;
@@ -258,6 +436,24 @@ label {
   .container-right{
     width: 50%;
   }
+  .panel-left{
+    width: 100%;
+    overflow-y: scroll;
+    height: 500px;
+  }
+  .panel-right{
+    width: 100%;
+  }
+  .alert-left{
+    width: 30%;
+  }
+  .alert-right{
+    width: 50%;
+  }
+  .alerts-heading {
+    font-size: 20px;
+    margin: 0;
+  }
 }
 
 @media screen and (min-width:780px) and (max-width:1024px){
@@ -267,6 +463,24 @@ label {
   .container-right{
     width: 50%;
   }
+.panel-left{
+  width: 30%;
+  overflow-y: scroll;
+  height: 500px;
+}
+.panel-right{
+  width: 60%;
+}
+.alert-left{
+  width: 30%;
+}
+.alert-right{
+  width: 50%;
+}
+.alerts-heading {
+  font-size: 20px;
+  margin: 0;
+}
 }
 
 @media screen and (min-width:1024px) and (max-width:1316px) { 
@@ -276,6 +490,24 @@ label {
   .container-right{
     width: 50%;
   }
+  .panel-left{
+    width: 30%;
+    overflow-y: scroll;
+    height: 500px;
+  }
+  .panel-right{
+    width: 55%;
+  }
+  .alert-left{
+    width: 20%;
+  }
+  .alert-right{
+    width: 60%;
+  }
+  .alerts-heading {
+    font-size: 30px;
+    margin: 0;
+  }
 }
 @media screen and (min-width:1316px) and (max-width:1440px)  {
   .container-left{
@@ -284,6 +516,24 @@ label {
   .container-right{
     width: 50%;
   }
+  .panel-left{
+    width: 30%;
+    overflow-y: scroll;
+    height: 500px;
+  }
+  .panel-right{
+    width: 60%;
+  }
+  .alert-left{
+    width: 20%;
+  }
+  .alert-right{
+    width: 60%;
+  }
+  .alerts-heading {
+    font-size: 50px;
+    margin: 0;
+  }
 }
 @media screen and (min-width:1440px)  { 
   .container-left{
@@ -291,5 +541,23 @@ label {
   }
   .container-right{
     width: 50%;
+  }
+  .panel-left{
+    width: 20%;
+    overflow-y: scroll;
+    height: 500px;
+  }
+  .panel-right{
+    width: 70%;
+  }
+  .alert-left{
+    width: 20%;
+  }
+  .alert-right{
+    width: 60%;
+  }
+  .alerts-heading {
+    font-size: 50px;
+    margin: 0;
   }
 }

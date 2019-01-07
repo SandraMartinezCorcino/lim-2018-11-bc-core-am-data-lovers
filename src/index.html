@@ -1,127 +1,153 @@
 <!DOCTYPE html>
 <html>
-  <head>
-
+   <head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
-  </head>
-  <body>
+      <meta charset="utf-8">
+      <title>Data Lovers</title>
+      <link rel="stylesheet" href="style.css" />
+      <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+   </head>
+   <body>
+      <header>
+            <nav class="menu navbar">
+              <span class="navbar-img" id="js-navbar">
+                  <img src="https://i.ibb.co/Jtcb7kh/navbar.png" alt = "navbar" width = "30" height = "30">
+               </span>
+               <img src="https://i.ibb.co/KWCqSQK/logo-wordbank.png" class = "logo-banco" alt = "logotype">
+               <ul class="list-nav" id="list-menu">
+                  <li>
+                      <a href="#" id = "inicio">INICIO</a>
+                   </li>
+                  <li>
+                     <a href="#" id = "somos">QUIENES SOMOS?</a>
+                  </li>
+                  <li>
+                     <a href="#" id = "indicadores">INDICADORES DE DESARROLLO</a>
+                  </li>
+                  <li>
+                     <a href="#" id = "paises">PAISES</a>
+                  </li>
+               </ul>
+            </nav>
 
-    <header>
-      <div id='logo' class='center '>
-        <img class="padding-top-40" src="img/logo.PNG" />
-      </div>
-  
-    </header>
+            <!--<div id = "principal"></div>
+            <did id = "texto-somos">Buscas data relacionada a indicadores demográficos y económicos de países de Latinoamérica para llevar a cabo tus trabajos de investigación universitaria, nosotros te ofrecemos una base de datos de los principales indicadores de desarrollo cuya fuente es el Banco Mundial. Cada indicador presenta data desde el año 1960 hasta 2017 de los siguientes países: Perú, México, Chile y Brasil.</div>
+            <div id = "texto-indicadores">Para facilitar tu búsqueda en nuestra base de datos podrás filtrar por cinco tipos de indicador: Población, Educación de nivel terciario, Educación de nivel secundario, Empleo y Desempleo. Los indicadores estadísticos son herramientas para clarificar y definir de forma más precisa, objetivos e impactos; son medidas verificables de cambio o resultado diseñadas para contar con un estándar por el cual evaluar, estimar o demostrar el progreso con respecto a metas establecidas. Los indicadores de población muestran las dinámicas poblacional y sirven para conocer el panorama y distinguir las diferencias entre cada grupo humano, de modo que ofrecen una visión general que puede ayudar a identificar lugares que requieren intervención.  Los indicadores de educación son importantes para medir la eficacia del sistema educativo de un país. Buscan comparar y juzgar el contexto y el funcionamiento de la enseñanza y sus resultados, en la actualidad han experimentado un gran desarrollo. Los indicadores de empleo y desempleo son importantes para el control de sostenibilidad de las familias de un país, de igual forma arroja resultados que permiten evaluar los planes de gobierno de un país y el impacto social que este tiene.</div>
+            <div id = "texto-paises">Presentamos data de indicadores demográficos y económicos de Perú, México, Chile y Brasil. Según Banco Mundial el crecimiento económico de América Latina podría mejorar en los próximos años después de una inesperada moderación este año, gracias a un repunte de la inversión y a mejores condiciones para el comercio. Mientras Brasil y Chile son mercados emergentes, ya que han tenido un rápido crecimiento de su actividad económica que se relaciona, no solo con el crecimiento interno del propio país, sino también con un incremento notable de las relaciones comerciales con terceros países. México reporta una desaceleración económica y Perú se espera será el país con la mayor expansión en el 2019 en la región. Es importante tener en cuenta que la economía global permanece sujeta a riesgos potenciales que podrían traer consigo una volatilidad financiera más agresiva y golpear con fuerza a los mercados emergentes, sobre todo en América Latina.</div>
+             -->     
+         </header>
 
-    <main>
-
-
-      <section id="sidebar">
-        <img class="img-responsive " src="img/Banner.png"> 
-    </section>
-
-    <section id="about-us" class="container">
-     
-        <div class="container-left color-white center padding-left-bottom-80">
-         <p class="title color-blue" >HACEMOS</p>
-         <p class="content padding-content text-color-morado"> Analiza los principales indicadores de desarrollo de Perú, México, Brasil y Chile que necesitas para llevar a cabo tus trabajos de investigación universitaria. Aquí encontrarás data obtenida del WORLDBANK del año 1960 al año 2017, presentada en tablas y gráficas correspondientes a múltiples indicadores que hemos clasificado en cuatro tipos: población, educación, empleo y desempleo; esto con el fin de hacer mas rápida su búsqueda.</p>
-         <button id="btn-start" type="button">Ver Dashboard</button>
-        
-        </div>
-        <div class="container-right color-light-blue center padding-left-bottom-80">
-          <img class="img-responsive" src="img/indicadores.png">
-        </div>
-    </section>
-
-    <section id="dasboard" class="color-white">
-      <div class="panel-dashboard">
-      <div class="title-panel-dashboard font-Prompt fomt-size-18"><p>Dashboard</p></div>
-      <div class="content-panel-dashboard  font-Prompt fomt-size-14"><p ><span class="text-color-gris-7">Inicio</span>  <span>/</span> <span class="text-color-dark-blue">Indicadores</span></p></div>  
-     </div>  
-        
-    </section>
-
-   
-    <section id="one" class="panel-select color-white">      
-     <div class="color-celeste text-color-white font-Prompt fomt-size-14"> Tipo de Indicadores </div>
-     <div class="panel-select-content center"> 
-      <label for="select-indicator">Filtrar por tipo</label>
-      <select id ="select-indicator">
-        <option >Población</option>
-        <option >Educación nivel terciaria</option>
-        <option >Educación nivel secundaria</option>
-        <option >Empleo</option>
-        <option >Desempleo</option>
-      </div>
-      </select>
-    </section>
-
-      <section id="two">
-       
-        <div class="panel-select-indicators color-white">
-            <p class = "indicador panel-select-title color-celeste text-color-white font-Prompt fomt-size-14">Indicadores de Población:</p>
-          <ul id = "container-list-population">
-            <!--indicadores d población-->
-          </ul>
-        </div>
-      </section>
-
-      <section id="three">
-        
-        <div class="panel-select-indicators color-white">
-            <p class = "indicador">Indicadores de Educación Nivel Terciaria:</p>
-          <ul id = "container-list-education" class="padding-25">
-            <!--indicadores d educación-->
-          </ul>
-        </div>
-      </section>
-
-      <section id="four">
-       
-        <div class="panel-select-indicators color-white">
-            <p class = "indicador">Indicadores de Educación Nivel secundaria:</p>
-          <ul id = "container-list-secondary-education">
-            <!--indicadores d educación-->
-          </ul>
-        </div>
-      </section>
-
-      <section id="five">
-        
-        <div class="panel-select-indicators color-white">
-            <p class = "indicador">Indicadores de Empleo:</p>
-          <ul id = "container-list-employment">
-            <!--indicadores d empleo-->
-          </ul>
-        </div>
-      </section>
-
-      <section id="six">
-        
-        <div class="panel-select-indicators color-white" >
-            <p class = "indicador">Indicadores de Desempleo:</p>
-          <ul id = "container-list-unemployment">
-            <!--indicadores de desempleo-->
-          </ul>
-        </div>
-      </section>
-
-    </main>
-
-    <footer id="we" class="color-gris">
-     
-        
+      <main>
+         <section id="dasboard"  class="color-white">
+            <div class="panel-dashboard">
+               <div class="title-panel-dashboard font-Prompt font-size-21">
+                  <p class="text-dashboard-color">Dashboard</p>
+               </div>
+               <div class="content-panel-dashboard  font-Prompt fomt-size-14">
+                  <p ><span class="text-color-gris-7">Inicio</span>  <span>/</span> <span class="text-color-dark-blue">Indicadores</span></p>
+               </div>
+            </div>
+         </section>
+         <section id="one" class="panel-select color-white">
+            <div class="panel-select-title color-celeste text-color-white font-Prompt card-title 
+               "> Tipo de Indicadores </div>
+            <div class="panel-select-content center">
+               <label for="select-indicator">Filtrar por tipo</label>
+               <select id ="select-indicator" class="margin-bottom-30">
+                  <option >Población</option>
+                  <option >Educación nivel terciaria</option>
+                  <option >Educación nivel secundaria</option>
+                  <option >Empleo</option>
+                  <option >Desempleo</option>
+               </select>
+            </div>
+         </section>
+         <section id="two">
+            <div class="panel-select-indicators color-white">
+               <p class="panel-select-title color-celeste text-color-white font-Prompt card-title" 
+               >Indicadores de Población:</p>
+               <p class="center font-Prompt fomt-size-18 padding-top-bottom-25">RELACIÓN DE LOS TIPO DE INDICADORES DE POBLACIÓN</p>
+               <ol id = "container-list-population" class="padre card-center-list font-Prompt card-title cursor-pointer">
+               </ol>
+            </div>
+         </section>
+         <section id="three">
+            <div class="panel-select-indicators color-white">
+               <p class = "panel-select-title color-celeste text-color-white font-Prompt card-title">Indicadores de Educación Nivel Terciaria:</p>
+               <p class="center font-Prompt fomt-size-18 padding-top-bottom-25">RELACIÓN DE LOS TIPO DE INDICADORES DE EDUCACION NIVEL TERCIARIA</p>
+               <ol id = "container-list-education" class="padre card-center-list font-Prompt card-title cursor-pointer ">
+               </ol>
+            </div>
+         </section>
+         <section id="four">
+            <div class = "panel-select-indicators color-white">
+               <p class = "panel-select-title color-celeste text-color-white font-Prompt card-title">Indicadores de Educación Nivel secundaria:</p>
+               <p class = "center font-Prompt fomt-size-18 padding-top-bottom-25">RELACIÓN DE LOS TIPO DE INDICADORES DE EDUCACIÓN NIVEL SECUNDARIA</p>
+               <ol id = "container-list-secondary-education"  class="padre card-center-list font-Prompt card-title cursor-pointer">
+               </ol>
+            </div>
+         </section>
+         <section id="five">
+            <div class="panel-select-indicators color-white">
+               <p class = "panel-select-title color-celeste text-color-white font-Prompt card-title">Indicadores de Empleo:</p>
+               <p class="center font-Prompt fomt-size-18 padding-top-bottom-25">RELACIÓN DE LOS TIPO DE INDICADORES DE EMPLEO</p>
+               <ol id = "container-list-employment"  class = "padre card-center-list font-Prompt card-title cursor-pointer">
+               </ol>
+            </div>
+         </section>
+         <section id="six">
+            <div class="panel-select-indicators color-white">
+               <p class = "panel-select-title color-celeste text-color-white font-Prompt card-title">Indicadores de Desempleo:</p>
+               <p class="center font-Prompt fomt-size-18 padding-top-bottom-25">RELACIÓN DE LOS TIPO DE INDICADORES DE DESEMPLEO</p>
+               <ol id = "container-list-unemployment"  class = "padre card-center-list font-Prompt card-title cursor-pointer">
+               </ol>
+            </div>
+         </section>
+         <section id="countries" class="panel-select color-white">
+            <div class="panel-select-title color-celeste text-color-white font-Prompt card-title
+               "> Tipo de Indicador: <span id="name-type-indicator"> </span> 
+            </div>
+            <div class="panel-select-content center">
+               <p class="margin-bottom-30 card-title font-Prompt fomt-size-18">Seleccione la bandera del país:</p>
+               <div id="group-flags" class="panel-flag padding-25">
+                  <button id="flag-bra"  class="button-img style-img-flag propety-button-flag margin-25" type="button"  value="BRA"></button>  
+                  <button id="flag-chl" class="button-img style-img-flag propety-button-flag margin-25" type="button" value="CHL"></button>
+                  <button id="flag-mex" class="button-img style-img-flag propety-button-flag margin-25" type="button" value="MEX"></button>
+                  <button id="flag-per" class="button-img style-img-flag propety-button-flag margin-25" type="button"  value="PER"></button>
+               </div>
+            </div>
+         </section>
+         <section id="section-data" >
+            <div class="panel-flex">
+              <div class="panel-select-indicators color-white panel-right" >
+               <p class = "panel-select-title color-celeste text-color-white font-Prompt card-title">Promedio de la data:</p>
+              <div class="alert-average alert-flex">
+               <img  src="img/graph.png" class="alert-left" />
+               <div class="alert-right">
+               <p id="show-average" class="alerts-heading text-align-right"></p>
+               <p class="alert-info text-align-right">Promedio Total</p></div>
+              </div>
+            </div>
+            <div class="panel-select-indicators color-white panel-left" >
+               <p class = "panel-select-title color-celeste text-color-white font-Prompt card-title">Data según el Año:</p>
+               <div class="center">
+               <button id="btn-sort-data-down" class="button-desc">Cronológicamente Descendente</button>
+               <p class="card-title font-Prompt fomt-size-18">Información ordenada cronológicamente</p>
+               <div id = "static-data" class="padding-25">
+               </div>
+               <div id = "desc-data" class="padding-25">
+               </div>
+               </div>
+            </div>
+         </div>
+         </section>         
+      </main>
+      <footer id="we" class="color-gris">
          <p class="color-green margin-top-bottom-0" ><span> © Copyright 2018. Todos los derechos reservados. </span> </p>
-         
       </footer>
-
-
-    <script src="./data/worldbank/worldbank.js"></script>
-    <script src="data.js"></script>
-    <script src="main.js"></script>
-  </body>
+      <script src="./data/worldbank/worldbank.js"></script>
+      <script src="data.js"></script>
+      <script src="main.js"></script>
+      <script src="Chart.js"></script>
+   </body>
 </html>
