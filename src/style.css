@@ -113,6 +113,7 @@ header{
 }
 footer{
   height: 48px;
+  background-color: #333333;
 }
 .padding-top-40{
   padding-top:40px;
