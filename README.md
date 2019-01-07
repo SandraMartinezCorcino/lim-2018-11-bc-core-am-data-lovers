@@ -74,7 +74,7 @@ Al iterar el nuevamente nuestro prototipo el usuario opinó que podíamos mostra
 ![tercer-prototipo](https://user-images.githubusercontent.com/45099610/50743652-bf3c5d80-11e8-11e9-9d28-72c5e376b4c1.PNG)
 
 ## Prototipo de alta fidelidad
-
+![prototipo-figma](https://www.figma.com/proto/LwHQJNkj5UvtyHK1ksKfE0AP/Untitled?node-id=72%3A3&scaling=min-zoom)
 ## Testeos de usabilidad
 + Los usuarios nos dieron su opinión y sus ideas para corregir y mejorar nuestro prototipo, los problemas de usabilidad que encontraron fueron los siguientes:
 + El tamaño de la letra no debería ser tan grande.
