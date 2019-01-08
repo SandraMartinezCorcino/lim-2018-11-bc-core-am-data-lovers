@@ -3,45 +3,6 @@ let navBar = document.getElementById('js-navbar');
 navBar.addEventListener('click', function() {
   listNav.classList.toggle('active');
 });
-
-/*
-const textoSomos = document.getElementById('texto-somos');
-const textoIndicadores = document.getElementById('texto-indicadores');
-const textoPaises = document.getElementById('texto-paises');
-const iniciar = document.getElementById('inicio');
-const textoSomos2 = document.getElementById('somos')
-const textoIndicadores2 = document.getElementById('indicadores');
-const textoPaises2 = document.getElementById('paises');
-
-// pantalla inicio
-iniciar.addEventListener('click', () => {
-  first.style.display = 'block';
-  somos.style.display = 'none';
-  textoIndicadores.style.display = 'none';
-  textoPaises.style.display = 'none';
-});
-// pantalla quienes somos
-textoSomos2.addEventListener('click', () => {
-  first.style.display = 'none';
-  somos.style.display = 'block';
-  textoIndicadores.style.display = 'none';
-  textoPaises.style.display = 'none';
-});
-// pantalla indicadores
-textoIndicadores2.addEventListener('click', () => {
-  first.style.display = 'none';
-  somos.style.display = 'none';
-  textoIndicadores.style.display = 'block';
-  textoPaises.style.display = 'none';
-});
-// pantalla paises
-textoPaises2.addEventListener('click', () => {
-  first.style.display = 'none';
-  somos.style.display = 'none';
-  textoIndicadores.style.display = 'none';
-  textoPaises.style.display = 'block';
-});
-*/
 const worldBankIndicators = WORLDBANK.PER.indicators;
 let getPopulationList = '';
 worldbank.population(worldBankIndicators).forEach(populationElement => {
@@ -87,6 +48,11 @@ document.getElementById('five').style.display = 'none';
 document.getElementById('six').style.display = 'none';
 document.getElementById('countries').style.display = 'none';
 document.getElementById('section-data').style.display = 'none';
+document.getElementById("option-country").style.display = 'none';
+document.getElementById("option-start").style.display = 'block';
+document.getElementById("option-we-are").style.display = 'none';
+document.getElementById("option-indicators").style.display = 'none';
+
 const indicatorSelect = document.getElementById('select-indicator');
 const showIndicator = () => {
   if (indicatorSelect.selectedIndex === 0) {
@@ -176,3 +142,52 @@ btnSortDataDown.addEventListener('click',() => {
   descData.style.display='block';
   descData.innerHTML = getDescDataList;
 });
+
+const btnStart=document.getElementById("inicio");
+btnStart.addEventListener('click',() =>{
+  const optionCountry=document.getElementById("option-country");
+  const optionStart=document.getElementById("option-start");
+  const optionWeAre=document.getElementById("option-we-are");
+  const optionIndicator=document.getElementById("option-indicators");
+  optionCountry.style.display="none";
+  optionStart.style.display="block";
+  optionWeAre.style.display="none";
+  optionIndicator.style.display="none";
+} )
+
+const btnCountry=document.getElementById("paises");
+btnCountry.addEventListener('click',() =>{
+  const optionCountry=document.getElementById("option-country");
+  const optionStart=document.getElementById("option-start");
+  const optionWeAre=document.getElementById("option-we-are");
+  const optionIndicator=document.getElementById("option-indicators");
+  optionCountry.style.display="block";
+  optionStart.style.display="none";
+  optionWeAre.style.display="none";
+  optionIndicator.style.display="none";
+
+})
+
+const btnWeAre=document.getElementById("somos");
+btnWeAre.addEventListener('click',() =>{
+  const optionCountry=document.getElementById("option-country");
+  const optionStart=document.getElementById("option-start");
+  const optionWeAre=document.getElementById("option-we-are");
+  const optionIndicator=document.getElementById("option-indicators");
+  optionWeAre.style.display="block";
+  optionIndicator.style.display="none";
+  optionCountry.style.display="none";
+  optionStart.style.display="none";
+})
+
+const btnIndicator=document.getElementById("indicadores");
+btnIndicator.addEventListener('click',() =>{
+  const optionCountry=document.getElementById("option-country");
+  const optionStart=document.getElementById("option-start");
+  const optionWeAre=document.getElementById("option-we-are");
+  const optionIndicator=document.getElementById("option-indicators");
+  optionIndicator.style.display="block";
+  optionCountry.style.display="none";
+  optionStart.style.display="none";
+  optionWeAre.style.display="none";
+})
