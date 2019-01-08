@@ -69,38 +69,7 @@
 .active {
   display: block;
 }
-@media screen and (min-width: 768px) {
-  .navbar {
-      display: flex;
-      justify-content: space-between;
-      padding-bottom: 0;
-      height: 70px;
-      align-items: center;
-  }
 
-  .list-nav {
-      display: flex;
-      margin-right: 30px;
-      flex-direction: row;
-      justify-content: flex-end;
-  }
-
-  .list-nav li {
-      margin: 0;
-  }
-
-  #inicio, #indicadores, #paises {
-      margin-left: 40px;
-  }
-
-  .logo-banco {
-      margin-top: 0;
-  }
-
-  .navbar-img {
-      display: none;
-  }
-}
 body {
   font-family: 'Abel', sans-serif;
   margin: 0px;
@@ -472,6 +441,31 @@ label {
   .container-right{
     width: 50%;
   }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 0;
+    height: 70px;
+    align-items: center;
+}
+.list-nav {
+    display: flex;
+    margin-right: 30px;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.list-nav li {
+    margin: 0;
+}
+#inicio, #indicadores, #paises {
+    margin-left: 40px;
+}
+.logo-banco {
+    margin-top: 0;
+}
+.navbar-img {
+    display: none;
+}
 .panel-left{
   width: 30%;
   overflow-y: scroll;
@@ -569,6 +563,33 @@ label {
     font-size: 50px;
     margin: 0;
   }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 0;
+    height: 77px;
+    align-items: center;
+}
+.list-nav {
+    display: flex;
+    margin-right: 30px;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.list-nav li {
+    margin: 0;
+}
+#inicio, #indicadores, #paises {
+    margin-left: 40px;
+}
+.logo-banco {
+    margin-top: 0;
+}
+.navbar-img {
+    display: none;
+    margin-top: 20px;
+
+}
 }
 @media screen and (min-width:1440px)  { 
   .container-left{
