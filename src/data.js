@@ -42,11 +42,12 @@ const calculateAverage = (data) => {
   const total = arrSum / data.length;
   return total;
 };
+
 const finalData = (dataFilter) => {
   const entriesObject = Object.entries(dataFilter[0].data);
-  console.log(converToInt(entriesObject));
   return converToInt(entriesObject);
 };
+
 const filterToData = (data, string) => {
   let arr = [];
   arr = data.filter(element => element.indicatorName === string);
@@ -56,7 +57,7 @@ const getAndShowData = (datas, country, string) => {
   const worldBankIndicatorsForCountry = datas[country]['indicators'];
   return filterToData(worldBankIndicatorsForCountry, string) ;
 };
-const compare = (element1, element2) => {
+const compareDesc = (element1, element2) => {
   if (parseInt(element1[0]) < parseInt(element2[0])) {
     return 1;  
   }
@@ -65,10 +66,29 @@ const compare = (element1, element2) => {
   }
   return 0;
 };
-const sortData = (parametro) => {
-  parametro.sort(compare);
-  return parametro;
+const compareAsc = (element1, element2) => {
+  if (parseInt(element1[0]) < parseInt(element2[0])) {
+    return -1;  
+  }
+  if (parseInt(element1[0]) > parseInt(element2[0])) {
+    return 1;  
+  }
+  return 0;
 };
+const sortData = (parametro,typeOfOrder) => {
+  switch (typeOfOrder) {
+    case 'desc':
+    parametro.sort(compareDesc);
+    return parametro;
+    case 'asc':
+    parametro.sort(compareAsc);
+    parametro.sort(compareAsc);
+    return parametro;
+}
+ 
+};
+
+
 window.worldbank = {
   population,
   education,

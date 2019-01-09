@@ -35,19 +35,22 @@
   list-style-type: none;
   display: none;
 }
-#inicio, #indicadores, #paises {
+#inicio, #indicadores, #paises, #somos {
   text-decoration: none;
   color: #1b80c3;
-  padding: 28px;
+  margin: 20px;
   font-family: Asap;
   font-size: 13px;
 }
-#inicio:hover, #indicadores:hover, #paises:hover {
-  color: #eceff2;
+#inicio:hover, #indicadores:hover, #paises:hover, #somos:hover {
+  border-bottom :2px solid #121F25;
 }
 .list-nav li {
   text-align: center;
   margin: 15px auto;
+}
+.list-nav.active{
+ padding: 10px;
 }
 .logo-banco {
   display: inline-block;
@@ -303,7 +306,7 @@ font-size: 50px;
   height: 85px;
  
 }
-.button-desc {
+.button-sort {
   background-color: #4CAF50; 
   border: none;
   color: white;
@@ -396,10 +399,7 @@ cursor: pointer;
   font-size: 1.5em;
 }
 
-a:hover {
-  background: #121F25;
-  color: #1CADE7;
-}
+
 
 label {
   margin-left: 2em;
@@ -456,7 +456,7 @@ label {
 .list-nav li {
     margin: 0;
 }
-#inicio, #indicadores, #paises {
+#inicio, #indicadores, #paises, #somos {
     margin-left: 40px;
 }
 .logo-banco {
@@ -526,8 +526,10 @@ label {
 .list-nav li {
     margin: 0;
 }
-#inicio, #indicadores, #paises {
+#inicio, #indicadores, #paises, #somos {
     margin-left: 40px;
+    padding: 0px;
+
 }
 .logo-banco {
     margin-top: 0;
@@ -578,8 +580,10 @@ label {
 .list-nav li {
     margin: 0;
 }
-#inicio, #indicadores, #paises {
+#inicio, #indicadores, #paises, #somos {
     margin-left: 40px;
+    padding: 0px;
+
 }
 .logo-banco {
     margin-top: 0;
@@ -631,8 +635,9 @@ label {
 .list-nav li {
     margin: 0;
 }
-#inicio, #indicadores, #paises {
+#inicio, #indicadores, #paises,#somos {
     margin-left: 40px;
+    padding: 0px;
 }
 .logo-banco {
     margin-top: 0;
