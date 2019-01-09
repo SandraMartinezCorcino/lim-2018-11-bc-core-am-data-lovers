@@ -129,10 +129,11 @@ groupFlags.addEventListener('click', (event) => {
   const showAverage=document.getElementById('show-average');
   showAverage.innerHTML=calculateAverage(worldbank.getAndShowData(WORLDBANK,searchData[1] ,searchData[0]));
 });
-const btnSortDataDown=document.getElementById('btn-sort-data-down');
-btnSortDataDown.addEventListener('click',() => {
+const btnSortDataDesc=document.getElementById('btn-sort-data-desc');
+btnSortDataDesc.addEventListener('click',() => {
   let getDescDataList = '';
-  worldbank.sortData(getAndShowData(WORLDBANK,searchData[1] ,searchData[0])).forEach((element) => {
+  const order='desc';
+  worldbank.sortData(getAndShowData(WORLDBANK,searchData[1] ,searchData[0]),order).forEach((element) => {
       const descDataList = `<li class='list-style-none' ><a class='indicator-name card-title font-Prompt fomt-size-18'> <span>Año:</span> ${element[0]} <span>=</span> ${element[1]} </a></li>` ;
       getDescDataList += descDataList;
   });
@@ -142,6 +143,21 @@ btnSortDataDown.addEventListener('click',() => {
   descData.style.display='block';
   descData.innerHTML = getDescDataList;
 });
+const btnSortDataAsc=document.getElementById('btn-sort-data-asc');
+btnSortDataAsc.addEventListener('click',() => {
+  let getDescDataList = '';
+  const order='asc';
+  worldbank.sortData(getAndShowData(WORLDBANK,searchData[1] ,searchData[0]),order).forEach((element) => {
+      const descDataList = `<li class='list-style-none' ><a class='indicator-name card-title font-Prompt fomt-size-18'> <span>Año:</span> ${element[0]} <span>=</span> ${element[1]} </a></li>` ;
+      getDescDataList += descDataList;
+  });
+  const staticData = document.getElementById('static-data');
+  const descData = document.getElementById('desc-data'); 
+  staticData.style.display='none';
+  descData.style.display='block';
+  descData.innerHTML = getDescDataList;
+});
+
 
 const btnStart=document.getElementById("inicio");
 btnStart.addEventListener('click',() =>{

@@ -57,7 +57,7 @@ const getAndShowData = (datas, country, string) => {
   const worldBankIndicatorsForCountry = datas[country]['indicators'];
   return filterToData(worldBankIndicatorsForCountry, string) ;
 };
-const compare = (element1, element2) => {
+const compareDesc = (element1, element2) => {
   if (parseInt(element1[0]) < parseInt(element2[0])) {
     return 1;  
   }
@@ -66,9 +66,31 @@ const compare = (element1, element2) => {
   }
   return 0;
 };
-const sortData = (parametro) => {
-  parametro.sort(compare);
-  return parametro;
+const compareAsc = (element1, element2) => {
+  if (parseInt(element1[0]) < parseInt(element2[0])) {
+    return -1;  
+  }
+  if (parseInt(element1[0]) > parseInt(element2[0])) {
+    return 1;  
+  }
+  return 0;
+};
+const sortData = (parametro,typeOfOrder) => {
+  switch (typeOfOrder) {
+    case 'desc':
+    console.log('acaDesc');
+    console.log(typeOfOrder);
+    parametro.sort(compareDesc);
+    return parametro;
+    case 'asc':
+    console.log('acaAsc');
+    console.log(typeOfOrder);
+    parametro.sort(compareAsc);
+    console.log(parametro.sort(compareAsc));
+    return parametro;
+    
+  }
+ 
 };
 
 
