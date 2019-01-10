@@ -48,13 +48,7 @@ document.getElementById('five').style.display = 'none';
 document.getElementById('six').style.display = 'none';
 document.getElementById('countries').style.display = 'none';
 document.getElementById('section-data').style.display = 'none';
-<<<<<<< HEAD
-document.getElementById('option-country').style.display = 'none';
 document.getElementById('option-start').style.display = 'block';
-document.getElementById('option-we-are').style.display = 'none';
-=======
-document.getElementById('option-start').style.display = 'block';
->>>>>>> 61b427cf085ab2ff1f0eaa3ffa4084d55e84cb89
 document.getElementById('option-indicators').style.display = 'none';
 
 const indicatorSelect = document.getElementById('select-indicator');
@@ -165,52 +159,6 @@ btnSortDataAsc.addEventListener('click', () => {
 
 const btnStart = document.getElementById('inicio');
 btnStart.addEventListener('click', () => {
-<<<<<<< HEAD
-  const optionCountry = document.getElementById('option-country');
-  const optionStart = document.getElementById('option-start');
-  const optionWeAre = document.getElementById('option-we-are');
-  const optionIndicator = document.getElementById('option-indicators');
-  optionCountry.style.display = 'none';
-  optionStart.style.display = 'block';
-  optionWeAre.style.display = 'none';
-  optionIndicator.style.display = 'none';
-});
-
-const btnCountry = document.getElementById('paises');
-btnCountry.addEventListener('click', () => {
-  const optionCountry = document.getElementById('option-country');
-  const optionStart = document.getElementById('option-start');
-  const optionWeAre = document.getElementById('option-we-are');
-  const optionIndicator = document.getElementById('option-indicators');
-  optionCountry.style.display = 'block';
-  optionStart.style.display = 'none';
-  optionWeAre.style.display = 'none';
-  optionIndicator.style.display = 'none';
-});
-
-const btnWeAre = document.getElementById('somos');
-btnWeAre.addEventListener('click', () => {
-  const optionCountry = document.getElementById('option-country');
-  const optionStart = document.getElementById('option-start');
-  const optionWeAre = document.getElementById('option-we-are');
-  const optionIndicator = document.getElementById('option-indicators');
-  optionWeAre.style.display = 'block';
-  optionIndicator.style.display = 'none';
-  optionCountry.style.display = 'none';
-  optionStart.style.display = 'none';
-});
-
-const btnIndicator = document.getElementById('indicadores');
-btnIndicator.addEventListener('click', () => {
-  const optionCountry = document.getElementById('option-country');
-  const optionStart = document.getElementById('option-start');
-  const optionWeAre = document.getElementById('option-we-are');
-  const optionIndicator = document.getElementById('option-indicators');
-  optionIndicator.style.display = 'block';
-  optionCountry.style.display = 'none';
-  optionStart.style.display = 'none';
-  optionWeAre.style.display = 'none';
-=======
   const optionStart = document.getElementById('option-start');
   const optionIndicator = document.getElementById('option-indicators');
   optionStart.style.display = 'block';
@@ -222,5 +170,4 @@ btnIndicator.addEventListener('click', () => {
   const optionIndicator = document.getElementById('option-indicators');
   optionIndicator.style.display = 'block';
   optionStart.style.display = 'none';
->>>>>>> 61b427cf085ab2ff1f0eaa3ffa4084d55e84cb89
 });
