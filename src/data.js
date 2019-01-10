@@ -31,7 +31,7 @@ const converToInt = (data) => {
   const result = data.map((x) => { 
     const array = []; 
     array[0] = parseInt(x[0], 10) ;
-    array[1] = (x[1]==='' ? 0 : parseFloat(x[1]));  
+    array[1] = (x[1] === '' ? 0 : parseFloat(x[1]));  
     return array; 
   });
   return result;
@@ -75,22 +75,16 @@ const compareAsc = (element1, element2) => {
   }
   return 0;
 };
-const sortData = (parametro,typeOfOrder) => {
+const sortData = (parametro, typeOfOrder) => {
   switch (typeOfOrder) {
-    case 'desc':
-    console.log('acaDesc');
-    console.log(typeOfOrder);
+  case 'desc':
     parametro.sort(compareDesc);
     return parametro;
-    case 'asc':
-    console.log('acaAsc');
-    console.log(typeOfOrder);
+  case 'asc':
     parametro.sort(compareAsc);
-    console.log(parametro.sort(compareAsc));
+    parametro.sort(compareAsc);
     return parametro;
-    
   }
- 
 };
 
 
