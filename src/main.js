@@ -6,35 +6,35 @@ navBar.addEventListener('click', function() {
 const worldBankIndicators = WORLDBANK.PER.indicators;
 let getPopulationList = '';
 worldbank.population(worldBankIndicators).forEach(populationElement => {
-  const populationList = `<li ><a class="indicator-name"> ${populationElement.indicatorName} </a></li>`;
+  const populationList = `<li ><a class='indicator-name'> ${populationElement.indicatorName} </a></li>`;
   getPopulationList += populationList;
 });
 const ulContainerPoblacion = document.getElementById('container-list-population');
 ulContainerPoblacion.innerHTML = getPopulationList;
 let getEducationList = '';
 worldbank.education(worldBankIndicators).forEach(educationElement => {
-  const educationList = `<li><a class="indicator-name"> ${educationElement.indicatorName} </a></li>`;
+  const educationList = `<li><a class='indicator-name'> ${educationElement.indicatorName} </a></li>`;
   getEducationList += educationList;
 });
 const ulContainerEducation = document.getElementById('container-list-education');
 ulContainerEducation.innerHTML = getEducationList;
 let getSecondaryEducationList = '';
 worldbank.secondaryEducation(worldBankIndicators).forEach(secondaryEducationElement => {
-  const secondaryEducationList = `<li><a class="indicator-name">${secondaryEducationElement.indicatorName} </a></li>`;
+  const secondaryEducationList = `<li><a class='indicator-name'>${secondaryEducationElement.indicatorName} </a></li>`;
   getSecondaryEducationList += secondaryEducationList;
 });
 const ulContainerSecondaryEducation = document.getElementById('container-list-secondary-education');
 ulContainerSecondaryEducation.innerHTML = getSecondaryEducationList;
 let getEmploymentList = '';
 worldbank.employment(worldBankIndicators).forEach(employmentElement => {
-  const employmentList = `<li><a class="indicator-name"> ${employmentElement.indicatorName} </a></li>`;
+  const employmentList = `<li><a class='indicator-name'> ${employmentElement.indicatorName} </a></li>`;
   getEmploymentList += employmentList;
 });
 const ulContainerEmployment = document.getElementById('container-list-employment');
 ulContainerEmployment.innerHTML = getEmploymentList;
 let getUnemploymentList = '';
 worldbank.unemployment(worldBankIndicators).forEach(unemploymentElement => {
-  const unemploymentList = `<li><a class="indicator-name">${unemploymentElement.indicatorName} </a></li>`;
+  const unemploymentList = `<li><a class='indicator-name'>${unemploymentElement.indicatorName} </a></li>`;
   getUnemploymentList += unemploymentList;
 });
 const ulContainerUnemployment = document.getElementById('container-list-unemployment');
@@ -48,9 +48,13 @@ document.getElementById('five').style.display = 'none';
 document.getElementById('six').style.display = 'none';
 document.getElementById('countries').style.display = 'none';
 document.getElementById('section-data').style.display = 'none';
+<<<<<<< HEAD
 document.getElementById('option-country').style.display = 'none';
 document.getElementById('option-start').style.display = 'block';
 document.getElementById('option-we-are').style.display = 'none';
+=======
+document.getElementById('option-start').style.display = 'block';
+>>>>>>> 61b427cf085ab2ff1f0eaa3ffa4084d55e84cb89
 document.getElementById('option-indicators').style.display = 'none';
 
 const indicatorSelect = document.getElementById('select-indicator');
@@ -161,6 +165,7 @@ btnSortDataAsc.addEventListener('click', () => {
 
 const btnStart = document.getElementById('inicio');
 btnStart.addEventListener('click', () => {
+<<<<<<< HEAD
   const optionCountry = document.getElementById('option-country');
   const optionStart = document.getElementById('option-start');
   const optionWeAre = document.getElementById('option-we-are');
@@ -205,4 +210,17 @@ btnIndicator.addEventListener('click', () => {
   optionCountry.style.display = 'none';
   optionStart.style.display = 'none';
   optionWeAre.style.display = 'none';
+=======
+  const optionStart = document.getElementById('option-start');
+  const optionIndicator = document.getElementById('option-indicators');
+  optionStart.style.display = 'block';
+  optionIndicator.style.display = 'none';
+});
+const btnIndicator = document.getElementById('indicadores');
+btnIndicator.addEventListener('click', () => {
+  const optionStart = document.getElementById('option-start');
+  const optionIndicator = document.getElementById('option-indicators');
+  optionIndicator.style.display = 'block';
+  optionStart.style.display = 'none';
+>>>>>>> 61b427cf085ab2ff1f0eaa3ffa4084d55e84cb89
 });
