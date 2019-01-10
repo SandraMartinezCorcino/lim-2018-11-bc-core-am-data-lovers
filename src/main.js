@@ -132,8 +132,8 @@ btnSortDataDesc.addEventListener('click', () => {
   let getDescDataList = '';
   const order = 'desc';
   worldbank.sortData(worldbank.getAndShowData(WORLDBANK, searchData[1], searchData[0]), order).forEach((element) => {
-      const descDataList = `<li class='list-style-none' ><a class='indicator-name card-title font-Prompt fomt-size-18'> <span>Año:</span> ${element[0]} <span>=</span> ${element[1]} </a></li>` ;
-      getDescDataList += descDataList;
+    const descDataList = `<li class='list-style-none' ><a class='indicator-name card-title font-Prompt fomt-size-18'> <span>Año:</span> ${element[0]} <span>=</span> ${element[1]} </a></li>` ;
+    getDescDataList += descDataList;
   });
   const staticData = document.getElementById('static-data');
   const descData = document.getElementById('desc-data'); 
@@ -146,8 +146,8 @@ btnSortDataAsc.addEventListener('click', () => {
   let getDescDataList = '';
   const order = 'asc';
   worldbank.sortData(worldbank.getAndShowData(WORLDBANK, searchData[1], searchData[0]), order).forEach((element) => {
-      const descDataList = `<li class='list-style-none' ><a class='indicator-name card-title font-Prompt fomt-size-18'> <span>Año:</span> ${element[0]} <span>=</span> ${element[1]} </a></li>` ;
-      getDescDataList += descDataList;
+    const descDataList = `<li class='list-style-none' ><a class='indicator-name card-title font-Prompt fomt-size-18'> <span>Año:</span> ${element[0]} <span>=</span> ${element[1]} </a></li>` ;
+    getDescDataList += descDataList;
   });
   const staticData = document.getElementById('static-data');
   const descData = document.getElementById('desc-data'); 
@@ -159,9 +159,7 @@ btnSortDataAsc.addEventListener('click', () => {
 
 const btnStart = document.getElementById('inicio');
 btnStart.addEventListener('click', () => {
-  const optionCountry = document.getElementById('option-country');
   const optionStart = document.getElementById('option-start');
-  const optionWeAre = document.getElementById('option-we-are');
   const optionIndicator = document.getElementById('option-indicators');
   optionStart.style.display = 'block';
   optionIndicator.style.display = 'none';
