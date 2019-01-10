@@ -216,14 +216,10 @@ const WORLDBANK = {
 };
 
 const inputSort = [[1964, 40719864], [1963, 39564454], [1962, 38427687], [1961, 37321829], [1960, 36255477]];
-/*
-const inputCompare1 = [1960, 36255477];
-const inputCompare2 = [1961, 37321829];
+const inputOrderSortDesc = 'desc';
 
-const outputCompare1 = 1;
-const outputCompare2 = -1;
-const outputCompare3 = 0;
-*/
+const inputOrderSortAsc = 'asc';
+
 describe('worldbank', () => {
   it('deberia ser un objeto', () => {
     expect(typeof worldbank).toBe('object');
@@ -249,11 +245,17 @@ describe('worldbank', () => {
     it('deberia ser una funcion', () => {
       expect(typeof worldbank.sortData).toBe('function');
     });
-    it('deberia retornar un array con la data ordenada descendentemente', () => {
-      expect(worldbank.sortData(inputSort)).toEqual(outputSortBraPob);
+    it('deberia retornar un array con la data ordenada ascendentemente', () => {
+      expect(worldbank.sortData(inputSort, inputOrderSortAsc)).toEqual(inputSort);
     });
     it('deberia retornar un nuevo array, no modificar el original', () => {
-      expect(worldbank.calculateAverage(inputSort)).not.toEqual(inputSort);
+      expect(worldbank.sortData(inputSort, inputOrderSortAsc)).not.toEqual(inputOrderSortAsc);
+    });
+    it('deberia retornar un array con la data ordenada descendentemente', () => {
+      expect(worldbank.sortData(inputSort, inputOrderSortDesc)).toEqual(outputSortBraPob);
+    });
+    it('deberia retornar un nuevo array, no modificar el original', () => {
+      expect(worldbank.sortData(inputSort, inputOrderSortDesc)).not.toEqual(inputOrderSortDesc);
     });
   });
 });
@@ -275,22 +277,4 @@ describe('worldbank', () => {
   });
 });
 
-/*
-describe('worldbank.compare', () => {
-  it('deberia ser una funcion', () => {
-    expect(typeof compare).toBe('function');
-  });
-  it('deberia retornar el promedio de la data', () => {
-    expect(worldbank.compare(inputCompare1, inputCompare2)).toEqual(outputCompare1);
-  });
-  it('deberia retornar el promedio de la data', () => {
-    expect(worldbank.compare(inputCompare2, inputCompare1)).toEqual(outputCompare2);
-  });
-  it('deberia retornar el promedio de la data', () => {
-    expect(worldbank.compare(inputCompare1, inputCompare1)).toEqual(outputCompare3);
-  });
-  it('deberia retornar un nuevo array, no modificar el original', () => {
-    expect(worldbank.compare(inputDataBra)).not.toEqual(inputDataBra);
-  });
-});
-*/
+
