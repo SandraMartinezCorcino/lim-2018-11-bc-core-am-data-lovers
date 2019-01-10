@@ -76,6 +76,7 @@ Al iterar el nuevamente nuestro prototipo el usuario opinó que podíamos mostra
 ## Prototipo de alta fidelidad
 
 [Prototipo en Figma](https://www.figma.com/proto/LwHQJNkj5UvtyHK1ksKfE0AP/Untitled?node-id=72%3A3&scaling=min-zoom).
+[Prototipo en Zeplin](https://zpl.io/V0RmQ4Q).
 
 ## Testeos de usabilidad
 + Los usuarios nos dieron su opinión y sus ideas para corregir y mejorar nuestro prototipo, los problemas de usabilidad que encontraron fueron los siguientes:
@@ -83,3 +84,4 @@ Al iterar el nuevamente nuestro prototipo el usuario opinó que podíamos mostra
 + Deberían usar más un color más cálido para que no predomine tanto el azul, por lo que optamos por usar más el color celeste en nuestro diseño.
 + Al ingresar a la página debería entender claramente que puedo empezar a filtrar por tipo de indicador y por país y esto me es confuso porque la barra de navegación no me lo deja claro,
 + Deberían mostrar banderas para filtrar por país y asi hacer más llamativo el diseño.
++ Deberian colocar en la parte superior un logo del Banco Mundial para identificar con rapidez que la data proviene de esa fuente.

@@ -1,11 +1,10 @@
-/* 
 let listNav = document.getElementById('list-menu');
 let navBar = document.getElementById('js-navbar');
 navBar.addEventListener('click', function() {
   listNav.classList.toggle('active');
 });
 
-
+/*
 const textoSomos = document.getElementById('texto-somos');
 const textoIndicadores = document.getElementById('texto-indicadores');
 const textoPaises = document.getElementById('texto-paises');
@@ -156,24 +155,24 @@ groupFlags.addEventListener('click', (event) => {
   staticData.style.display = 'block';  
   descData.style.display = 'none';
   let getPopulationList = '';
-  worldbank.getAndShowData(WORLDBANK,searchData[1] ,searchData[0]).forEach((element) => {
-      const populationList = `<li class='list-style-none' ><a class='indicator-name card-title font-Prompt fomt-size-18'> <span>Año:</span> ${element[0]} <span>=</span> ${element[1]} </a></li>` ;
-      getPopulationList += populationList;     
+  worldbank.getAndShowData(WORLDBANK, searchData[1], searchData[0]).forEach((element) => {
+    const populationList = `<li class='list-style-none' ><a class='indicator-name card-title font-Prompt fomt-size-18'> <span>Año:</span> ${element[0]} <span>=</span> ${element[1]} </a></li>` ;
+    getPopulationList += populationList;     
   });  
   staticData.innerHTML = getPopulationList;
-  const showAverage=document.getElementById('show-average');
-  showAverage.innerHTML=calculateAverage(worldbank.getAndShowData(WORLDBANK,searchData[1] ,searchData[0]));
+  const showAverage = document.getElementById('show-average');
+  showAverage.innerHTML = worldbank.calculateAverage(worldbank.getAndShowData(WORLDBANK, searchData[1], searchData[0]));
 });
-const btnSortDataDown=document.getElementById('btn-sort-data-down');
-btnSortDataDown.addEventListener('click',() => {
+const btnSortDataDown = document.getElementById('btn-sort-data-down');
+btnSortDataDown.addEventListener('click', () => {
   let getDescDataList = '';
-  worldbank.sortData(getAndShowData(WORLDBANK,searchData[1] ,searchData[0])).forEach((element) => {
-      const descDataList = `<li class='list-style-none' ><a class='indicator-name card-title font-Prompt fomt-size-18'> <span>Año:</span> ${element[0]} <span>=</span> ${element[1]} </a></li>` ;
-      getDescDataList += descDataList;
+  worldbank.sortData(worldbank.getAndShowData(WORLDBANK, searchData[1], searchData[0])).forEach((element) => {
+    const descDataList = `<li class='list-style-none' ><a class='indicator-name card-title font-Prompt fomt-size-18'> <span>Año:</span> ${element[0]} <span>=</span> ${element[1]} </a></li>` ;
+    getDescDataList += descDataList;
   });
   const staticData = document.getElementById('static-data');
   const descData = document.getElementById('desc-data'); 
-  staticData.style.display='none';
-  descData.style.display='block';
+  staticData.style.display = 'none';
+  descData.style.display = 'block';
   descData.innerHTML = getDescDataList;
 });
