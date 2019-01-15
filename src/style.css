@@ -16,6 +16,7 @@
 .menu {
   font-family: "Josefin Sans", sans-serif;
 }
+
 .navbar {
   width: 100%;
   z-index: 100;
@@ -67,7 +68,10 @@
   color: rgba(255, 255, 255, 0.8);
   font-size: 24px;
   margin-top: 20px;
-
+}
+.navbar-img>img{
+  width: 30px;
+  height: 30px;
 }
 .active {
   display: block;
@@ -349,7 +353,7 @@ font-size: 50px;
 .color-celeste {
   background-color: #03A9F4;
 }
- .font-Prompt {
+ .font-prompt {
     font-family: 'Prompt', sans-serif;
   }
   .fomt-size-18{
