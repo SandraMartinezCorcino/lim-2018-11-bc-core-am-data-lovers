@@ -7,6 +7,21 @@ const population = (arr) => {
   populationArr = arr.filter(populationElement => populationElement.indicatorCode.substring(0, 6) === 'SP.POP');
   return populationArr;
 };
+const fetchPopulation = (arr) => {
+  const url1 = 'http://127.0.0.1:5500/src/data/worldbank/worldbank.json';   
+  fetch(url1)
+    .then((response) => {
+      if (response.status === 200) {
+        return response.json();
+      } else {
+        throw new Error('La llamada a la API falló');
+      }
+    })
+    .then((arr) => {
+      console.log(arr);
+      return arr;
+    });
+};
 const education = (arr) => {
   let educationArr = [];
   educationArr = arr.filter(educationElement => educationElement.indicatorCode.substring(0, 6) === 'SE.TER');
@@ -86,7 +101,9 @@ const sortData = (parametro, typeOfOrder) => {
     return parametro;
   }
 };
+ 
 
+cargarJSON();
 
 window.worldbank = {
   population,
